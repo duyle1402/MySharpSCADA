@@ -1,0 +1,1418 @@
+﻿<Window x:Name="window" x:Class="WpfAppServer.AS_View.ASCompany"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppServer"        
+        xmlns:chartingToolkit="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit" 
+        Title="An Sinh Automation" Height="750" Width="1150" mc:Ignorable="d" Closed="Window_Closed" >
+    <Window.Resources>
+        <Style x:Key="defaultRadioStyle" TargetType="RadioButton">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RadioButton">
+                        <Grid>
+                            <Border x:Name="border" CornerRadius="7" Margin="-5"/>
+                            <ContentPresenter x:Name="contentPresenter"  Focusable="False" 
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" 
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter Property="Background" Value="#46CBD9" TargetName="border"/>
+                            </Trigger>
+
+                            <Trigger Property="IsChecked" Value="False">
+                                <Setter Property="Background" Value="Transparent"/>
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+        
+        
+        <Storyboard x:Key="Home_show">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="grid_home">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="grid_about">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="grid_product">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="grid_SCADA">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="grid_hmi">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="grid_accessory">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="grid_solution">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Show_about">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="grid_home">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="grid_about">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="grid_product">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="grid_SCADA">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="grid_hmi">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="grid_accessory">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="grid_solution">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Show_about_about1">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_1">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_2">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_3">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_4">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_5">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_6">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_7">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Show_about_about2">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_2">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_1">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_3">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_4">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_5">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_6">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_7">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Show_about_about5">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_5">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_1">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_2">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_3">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_4">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_6">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_7">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Show_about_about3">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_3">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_1">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_2">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_4">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_5">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_6">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_7">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Show_about_about4">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_4">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_1">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_2">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_3">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_5">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_6">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_7">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Show_about_about6">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_6">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_7">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_1">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_2">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_3">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_4">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_5">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Show_about_about7">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_7">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_1">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_2">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_3">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_4">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_5">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="about_6">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded" SourceName="window">
+            <BeginStoryboard Storyboard="{StaticResource Home_show}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ToggleButton.Checked" SourceName="radioButton_about">
+            <BeginStoryboard x:Name="Show_about_BeginStoryboard1" Storyboard="{StaticResource Show_about}"/>
+            <BeginStoryboard x:Name="Show_about_about1_BeginStoryboard" Storyboard="{StaticResource Show_about_about1}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ToggleButton.Checked" SourceName="radioButton_home">
+            <BeginStoryboard Storyboard="{StaticResource Home_show}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ToggleButton.Checked" SourceName="About1">
+            <BeginStoryboard x:Name="Show_about_about1_BeginStoryboard1" Storyboard="{StaticResource Show_about_about1}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ToggleButton.Checked" SourceName="About2">
+            <BeginStoryboard x:Name="Show_about_about2_BeginStoryboard1" Storyboard="{StaticResource Show_about_about2}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ToggleButton.Checked" SourceName="About5">
+            <BeginStoryboard x:Name="Show_about_about5_BeginStoryboard1" Storyboard="{StaticResource Show_about_about5}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ToggleButton.Checked" SourceName="About3">
+            <BeginStoryboard x:Name="Show_about_about3_BeginStoryboard1" Storyboard="{StaticResource Show_about_about3}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ToggleButton.Checked" SourceName="About4">
+            <BeginStoryboard x:Name="Show_about_about4_BeginStoryboard1" Storyboard="{StaticResource Show_about_about4}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ToggleButton.Checked" SourceName="About6">
+            <BeginStoryboard x:Name="Show_about_about6_BeginStoryboard1" Storyboard="{StaticResource Show_about_about6}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ToggleButton.Checked" SourceName="About7">
+            <BeginStoryboard x:Name="Show_about_about7_BeginStoryboard1" Storyboard="{StaticResource Show_about_about7}"/>
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="77*"/>
+            <RowDefinition Height="340*"/>
+        </Grid.RowDefinitions>
+        <!--<Grid.ColumnDefinitions>
+            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="43*"/>
+        </Grid.ColumnDefinitions>-->
+        <Grid Grid.Row="0" Background="#12BDCF" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="9*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="53*"/>
+                <ColumnDefinition Width="147*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal">
+                <Image Source="ImageResources/ASlogo.jpg" Width="40" Height="34" Margin="10,0,0,0"/>
+                <TextBlock Text="An Sinh Automation" Foreground="White" FontSize="20"  FontWeight="Bold" Width="198" Height="29" TextAlignment="Center" FontStyle="Italic" Margin="2,0,0,0" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="1"  Orientation="Horizontal"  VerticalAlignment="Center" Margin="0,0,-1,0" Height="45" Grid.Column="1"  >
+                <RadioButton x:Name="radioButton_home" Style="{StaticResource defaultRadioStyle}" Content="Home" IsChecked="True" Margin="15 0 0 0" FontWeight="Bold" Height="25"/>
+                <RadioButton x:Name="radioButton_product" Style="{StaticResource defaultRadioStyle}" Content="IoT-Product" Margin="20,0,0,0" FontWeight="Bold" Height="32" Width="72"/>
+                <RadioButton x:Name="radioButton_scada" Style="{StaticResource defaultRadioStyle}" Content="IoT-SCADA" Margin="20,0,0,0" FontWeight="Bold" Height="32" Width="64"/>
+                <RadioButton x:Name="radioButton_plc" Style="{StaticResource defaultRadioStyle}" Content="PLC-HMI" Margin="20,0,0,0" FontWeight="Bold" Height="32" Width="50"/>
+                <RadioButton x:Name="radioButton_accesstory" Style="{StaticResource defaultRadioStyle}" Content="Accessories" Margin="20,0,0,0" FontWeight="Bold" Height="32"/>
+                <RadioButton x:Name="radioButton_solution" Style="{StaticResource defaultRadioStyle}" Content="IoT-Solution" Margin="30 0 0 0" FontWeight="Bold" Height="32"/>
+                <RadioButton x:Name="radioButton_about" Style="{StaticResource defaultRadioStyle}" Content="About Us" Margin="20,0,0,0" FontWeight="Bold" Height="27"/>
+                <RadioButton Style="{StaticResource defaultRadioStyle}"  Margin="20,0,0,0" FontWeight="Bold" Height="32" Width="83">
+
+
+                    <Hyperlink NavigateUri="https://iot-industrial.com.vn/" RequestNavigate="Hyperlink_RequestNavigate" Foreground="White" FontWeight="Bold" FontStyle="Normal">
+                        Contact Us
+                    </Hyperlink>
+
+                </RadioButton>
+
+
+            </StackPanel>
+            <TextBlock Text="Core Values and Development" Grid.Column="0" Grid.Row="1" Foreground="#FF40820C" FontSize="18" FontWeight="Bold" Margin="1,4,3,15"/>
+            <StackPanel Grid.Column="1" VerticalAlignment="Top"  HorizontalAlignment="Right" Margin="0,5,10,0" Orientation="Horizontal" Width="180" Height="39">
+                <TextBlock Text="❤" FontSize="15" Foreground="White" VerticalAlignment="Center"/>
+                <Image Source="ImageResources/ASlogo.jpg" Width="48" Height="41" Margin="20,0,0,0" VerticalAlignment="Center">
+                    <Image.Clip>
+                        <EllipseGeometry RadiusX="15" RadiusY="15" Center="15,15"/>
+                    </Image.Clip>
+                </Image>
+                <TextBlock Text="Iot SCADA" Foreground="White" FontSize="15" VerticalAlignment="Center" Width="78" FontWeight="Bold"/>
+            </StackPanel>
+        </Grid>
+
+        <Border Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="36"  Margin="828,45,0,0"
+                        Background="#FFC5EAED" CornerRadius="10" Width="312">
+            <Grid Margin="-6,0,0,0" HorizontalAlignment="Left" Width="390">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="❤" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" Foreground="#76CBD2"/>
+
+                <TextBox Name="inputText" Grid.Column="1" Width="300" Margin="1,0,39,0" >
+                    <TextBox.Resources>
+                        <VisualBrush x:Key="hinttext" TileMode="None" AlignmentX="Left" Stretch="None">
+                            <VisualBrush.Visual>
+                                <TextBlock FontStyle="Normal" Foreground="#76CBD2" Text="Searching "/>
+                            </VisualBrush.Visual>
+                        </VisualBrush>
+                    </TextBox.Resources>
+
+                    <TextBox.Style>
+                        <Style TargetType="TextBox">
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                            <Setter Property="FontSize" Value="14"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Style.Triggers>
+                                <Trigger Property="Text" Value="">
+                                    <Setter Property="Background" Value="{StaticResource hinttext}"/>
+                                </Trigger>
+
+                                <Trigger Property="Text" Value="{x:Null}">
+                                    <Setter Property="Background" Value="{StaticResource hinttext}"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBox.Style>
+
+                </TextBox>
+            </Grid>
+        </Border>
+
+        <Grid x:Name="grid_home" Margin="0,154,10,60" Grid.RowSpan="2" Visibility="Hidden">
+            <Image Source="ImageResources/a1.png" Margin="2,0,0,-55"/>
+
+        </Grid>
+        <Grid Background="#FFE1F1F1" x:Name="grid_about" Visibility="Visible" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="11*"/>
+                <ColumnDefinition Width="49*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Background="#FFAADCE0"  Orientation="Vertical" HorizontalAlignment="Center" Width="220" Grid.RowSpan="2"  >
+
+                <RadioButton x:Name="About1"  Style="{StaticResource defaultRadioStyle}" Content="An Sinh Electrical - Automation" IsChecked="True" FontWeight="Bold" Height="39" Width="183" HorizontalAlignment="Left" Margin="15,20,0,0" HorizontalContentAlignment="Left"/>
+                <RadioButton x:Name="About2"  Style="{StaticResource defaultRadioStyle}" Content="Local Department" FontWeight="Bold" Height="55" Width="164" HorizontalAlignment="Center" Margin="3,10,0,0"/>
+                <RadioButton x:Name="About3"  Style="{StaticResource defaultRadioStyle}" Content="Company Board and Management " FontWeight="Bold" Height="52" Width="195" HorizontalAlignment="Left" Margin="10,10,0,0"/>
+                <RadioButton x:Name="About4"  Style="{StaticResource defaultRadioStyle}" Content="Management and Processes " FontWeight="Bold" Height="60" Width="185" HorizontalAlignment="Left" Margin="15,10,0,0"/>
+                <RadioButton  x:Name="About5" Style="{StaticResource defaultRadioStyle}" Content="Meet Our Client" FontWeight="Bold" Height="60" Width="175" HorizontalAlignment="Left" Margin="15,10,0,0"/>
+                <RadioButton x:Name="About6"  Style="{StaticResource defaultRadioStyle}" Content="What Our Customers Are Saying" FontWeight="Bold" Height="58" HorizontalAlignment="Left" Margin="15,10,0,0"/>
+                <RadioButton  x:Name="About7"  Style="{StaticResource defaultRadioStyle}" Content="Contact Us" FontWeight="Bold" Height="40" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Margin="30,10,0,0" Width="135"/>
+            </StackPanel>
+            <Grid x:Name="about_1"  Grid.Column="1" Visibility="Hidden">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="203*"/>
+                    <RowDefinition Height="395*"/>
+                </Grid.RowDefinitions>
+                <Grid Margin="30,0,10,10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="An Sinh Electrical - Automation Company Limited" FontSize="22" Foreground="#586A73" VerticalAlignment="Center" Height="30"/>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Height="30" Margin="504,0,0,0">
+                        <Border Width="80" Height="25" CornerRadius="10" BorderThickness="1" Margin="0 0 15 0" BorderBrush="#A4ADB2">
+                            <TextBlock Text="DAY" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+
+                        <Border Width="80" Height="25" CornerRadius="10" BorderThickness="1" Margin="0 0 15 0" BorderBrush="#A4ADB2">
+                            <TextBlock Text="MONTH" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+
+                        <Border Width="80" Height="25" CornerRadius="10" BorderThickness="1" Margin="0 0 15 0" BorderBrush="#A4ADB2">
+                            <TextBlock Text="YEAR" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </StackPanel>
+
+                    <UniformGrid Columns="3" Grid.Row="1">
+                        <Grid>
+                            <Border Background="#FF7000" Margin="50 20 50 20">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="#FF7000" ShadowDepth="30" BlurRadius="50" Opacity="0.8" Direction="270"/>
+                                </Border.Effect>
+                            </Border>
+
+                            <Border CornerRadius="10" Margin="10 0 10 0" Background="#FF7000">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+
+                                    <Border BorderThickness="1" Height="1" BorderBrush="#EBEBEB" VerticalAlignment="Center" Grid.RowSpan="2"/>
+
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="4*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Border Background="#ffffff" Opacity="0.2" Width="35" Height="35" CornerRadius="35"/>
+                                        <TextBlock Text="&#xe521;" FontFamily="Fonts/#iconfont" 
+                                                   FontSize="22" Foreground="White"
+                                                   VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+                                        <TextBlock Text="Established " Grid.Column="1" Foreground="White" VerticalAlignment="Center"/>
+
+                                    </Grid>
+
+                                    <StackPanel Grid.Row="1" VerticalAlignment="Center" Margin="15 0 0 0">
+                                        <TextBlock Text="November 05th 2012" FontSize="22" Foreground="White"/>
+                                        <TextBlock Text="November 05th 2012" Foreground="White"/>
+                                    </StackPanel>
+
+                                </Grid>
+                            </Border>
+                        </Grid>
+
+                        <Grid>
+                            <Border Background="#FFC100" Margin="50 20 50 20">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="#FFC100" ShadowDepth="30" BlurRadius="50" Opacity="0.8" Direction="270"/>
+                                </Border.Effect>
+                            </Border>
+
+                            <Border CornerRadius="10" Margin="10 0 10 0" Background="#FFC100">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+
+                                    <Border BorderThickness="1" Height="1" BorderBrush="#EBEBEB" VerticalAlignment="Center" Grid.RowSpan="2"/>
+
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="4*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Border Background="#ffffff" Opacity="0.2" Width="35" Height="35" CornerRadius="35"/>
+                                        <TextBlock Text="&#xe601;" FontFamily="Fonts/iconfont.ttf" 
+                                                   FontSize="22" Foreground="White"
+                                                   VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+                                        <TextBlock Text="Employees" Grid.Column="1" Foreground="White" VerticalAlignment="Center"/>
+
+                                    </Grid>
+
+                                    <StackPanel Grid.Row="1" VerticalAlignment="Center" Margin="15 0 0 0">
+                                        <TextBlock Text="15+" FontSize="22" Foreground="White"/>
+                                        <TextBlock Text="people " Foreground="White"/>
+                                    </StackPanel>
+
+                                </Grid>
+                            </Border>
+                        </Grid>
+
+                        <Grid>
+                            <Border Background="#59E6B5" Margin="50 20 50 20">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="#59E6B5" ShadowDepth="30" BlurRadius="50" Opacity="0.8" Direction="270"/>
+                                </Border.Effect>
+                            </Border>
+
+                            <Border CornerRadius="10" Margin="10 0 10 0" Background="#59E6B5">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+
+                                    <Border BorderThickness="1" Height="1" BorderBrush="#EBEBEB" VerticalAlignment="Center" Grid.RowSpan="2"/>
+
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="4*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Border Background="#ffffff" Opacity="0.2" Width="35" Height="35" CornerRadius="35"/>
+                                        <TextBlock Text="&#xe69d;" FontFamily="Fonts/iconfont.ttf" 
+                                                   FontSize="22" Foreground="White"
+                                                   VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+                                        <TextBlock Text="Project Delivered" Grid.Column="1" Foreground="White" VerticalAlignment="Center"/>
+
+                                    </Grid>
+
+                                    <StackPanel Grid.Row="1" VerticalAlignment="Center" Margin="15 0 0 0">
+                                        <TextBlock Text="200+ Project Delivered " FontSize="22" Foreground="White"/>
+                                        <TextBlock Text="91% Returning Clients" Foreground="White"/>
+                                    </StackPanel>
+
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </UniformGrid>
+
+
+
+
+                </Grid>
+
+                <UniformGrid Columns="4" Grid.Row="1" Margin="10,10,10,0">
+
+                    <Grid Margin="10,0,0,25">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="6*"/>
+                            <RowDefinition Height="35*"/>
+                            <RowDefinition Height="31*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Text="The main professional activities:" FontWeight="Bold" FontSize="14" TextAlignment="Center" Margin="0,10,0,0"/>
+                        <Border Grid.Row="1" Margin="5,20,5,5" Background="White" CornerRadius="10">
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="20" Color="DarkGray" Opacity="0.4" Direction="280" ShadowDepth="0" />
+                            </Border.Effect>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="2*"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Text="Medium and low" VerticalAlignment="Center" Foreground="#717171" Margin="10 0 0 0"/>
+                                <TextBlock Text="voltage switchgear." Grid.Row="1" VerticalAlignment="Center" Margin="10 0 0 0" FontSize="22"/>
+                                <Border CornerRadius="5" Width="30" Height="30" Background="#D5F8EC" Grid.Row="1" HorizontalAlignment="Right" 
+                                        VerticalAlignment="Top" Margin="0 0 5 0">
+                                    <TextBlock Text="&#xe502;" FontSize="18" Foreground="#59E6B5" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Fonts/#iconfont"/>
+                                </Border>
+
+                                <StackPanel Grid.Row="2" VerticalAlignment="Center" Margin="10 0 0 0" Orientation="Horizontal">
+                                    <TextBlock Text="&#xe78b;" Foreground="#59E6B5" FontFamily="Fonts/#iconfont"/>
+                                    <TextBlock Margin="5 0 0 0" Text="Slince last month"  Foreground="#A4ADB2" />
+                                </StackPanel>
+                            </Grid>
+
+                        </Border>
+
+                        <Border Grid.Row="2" Margin="5,10,5,0" Background="White" CornerRadius="10">
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="20" Color="DarkGray" Opacity="0.4" Direction="280" ShadowDepth="0" />
+                            </Border.Effect>
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="2*"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Text="Designing technological lines " VerticalAlignment="Center" Foreground="#717171" Margin="10 0 0 0"/>
+                                <TextBlock Text="Power station" Grid.Row="1" VerticalAlignment="Center" Margin="10 0 0 0" FontSize="22"/>
+                                <Border CornerRadius="5" Width="30" Height="30" Background="#D5F8EC" Grid.Row="1" HorizontalAlignment="Right" 
+                                        VerticalAlignment="Top" Margin="0 0 5 0">
+                                    <TextBlock Text="&#xe62d;" FontSize="18" Foreground="#59E6B5" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Fonts/#iconfont"/>
+                                </Border>
+
+                                <StackPanel Grid.Row="2" VerticalAlignment="Center" Margin="10 0 0 0" Orientation="Horizontal">
+                                    <TextBlock Text="&#xe78b;" Foreground="Red" FontFamily="Fonts/#iconfont"/>
+                                    <TextBlock Margin="5 0 0 0" Text="Food + Brewery industry"  Foreground="#A4ADB2" />
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+
+                    </Grid>
+
+                    <Grid Margin="10,0,0,25">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Border Margin="5 0 5 5" Background="White" CornerRadius="10">
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="20" Color="DarkGray" Opacity="0.4" Direction="280" ShadowDepth="0" />
+                            </Border.Effect>
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="2*"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Text="Design" VerticalAlignment="Center" Foreground="#717171" Margin="10 0 0 0"/>
+                                <TextBlock Text="consulting" Grid.Row="1" VerticalAlignment="Center" Margin="10 0 0 0" FontSize="22"/>
+                                <Border CornerRadius="5" Width="30" Height="30" Background="#D5F8EC" Grid.Row="1" HorizontalAlignment="Right" 
+                                        VerticalAlignment="Top" Margin="0 0 5 0">
+                                    <TextBlock Text="&#xe68a;" FontSize="18" Foreground="#59E6B5" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Fonts/#iconfont"/>
+                                </Border>
+
+                                <StackPanel Grid.Row="2" VerticalAlignment="Center" Margin="10 0 0 0" Orientation="Horizontal">
+                                    <TextBlock Text="&#xe78b;" Foreground="Red" FontFamily="Fonts/#iconfont"/>
+                                    <TextBlock Margin="5 0 0 0" Text="Installation"  Foreground="#A4ADB2" />
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+
+                        <Border Grid.Row="1" Margin="5 10 5 0" Background="White" CornerRadius="10">
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="20" Color="DarkGray" Opacity="0.4" Direction="280" ShadowDepth="0" />
+                            </Border.Effect>
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="2*"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Text="Allen-Bradley" VerticalAlignment="Center" Foreground="#717171" Margin="10 0 0 0"/>
+                                <TextBlock Text="PLC" Grid.Row="1" VerticalAlignment="Center" Margin="10 0 0 0" FontSize="22"/>
+                                <Border CornerRadius="5" Width="30" Height="30" Background="#D5F8EC" Grid.Row="1" HorizontalAlignment="Right" 
+                                        VerticalAlignment="Top" Margin="0 0 5 0">
+                                    <TextBlock Text="&#xe501;" FontSize="18" Foreground="#59E6B5" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Fonts/#iconfont"/>
+                                </Border>
+
+                                <StackPanel Grid.Row="2" VerticalAlignment="Center" Margin="10 0 0 0" Orientation="Horizontal">
+                                    <TextBlock Text="&#xe78b;" Foreground="#59E6B5" FontFamily="Fonts/#iconfont"/>
+                                    <TextBlock Margin="5 0 0 0" Text="Siemens/Mitsubishi"  Foreground="#A4ADB2" />
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                    <Grid Margin="10,0,0,25">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Border Margin="5 0 5 5" Background="White" CornerRadius="10">
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="20" Color="DarkGray" Opacity="0.4" Direction="280" ShadowDepth="0" />
+                            </Border.Effect>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="2*"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Text="Water pumping station system" VerticalAlignment="Center" Foreground="#717171" Margin="10 0 0 0"/>
+                                <TextBlock Text="automation system " Grid.Row="1" VerticalAlignment="Center" Margin="10 0 0 0" FontSize="22"/>
+                                <Border CornerRadius="5" Width="30" Height="30" Background="#D5F8EC" Grid.Row="1" HorizontalAlignment="Right" 
+                                        VerticalAlignment="Top" Margin="0 0 5 0">
+                                    <TextBlock Text="&#xe502;" FontSize="18" Foreground="#59E6B5" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Fonts/#iconfont"/>
+                                </Border>
+
+                                <StackPanel Grid.Row="2" VerticalAlignment="Center" Margin="10 0 0 0" Orientation="Horizontal">
+                                    <TextBlock Text="&#xe78b;" Foreground="#59E6B5" FontFamily="Fonts/#iconfont"/>
+                                    <TextBlock Margin="5 0 0 0" Text="Energy monitoring system"  Foreground="#A4ADB2" />
+                                </StackPanel>
+                            </Grid>
+
+                        </Border>
+
+                        <Border Grid.Row="1" Margin="5 10 5 0" Background="White" CornerRadius="10">
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="20" Color="DarkGray" Opacity="0.4" Direction="280" ShadowDepth="0" />
+                            </Border.Effect>
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="2*"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Text="Electrical" VerticalAlignment="Center" Foreground="#717171" Margin="10 0 0 0"/>
+                                <TextBlock Text="training and transfer" Grid.Row="1" VerticalAlignment="Center" FontSize="22"/>
+                                <Border CornerRadius="5" Width="30" Height="30" Background="#D5F8EC" Grid.Row="1" HorizontalAlignment="Right" 
+                                        VerticalAlignment="Top" Margin="0 0 5 0">
+                                    <TextBlock Text="&#xe62d;" FontSize="18" Foreground="#59E6B5" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Fonts/#iconfont"/>
+                                </Border>
+
+                                <StackPanel Grid.Row="2" VerticalAlignment="Center" Margin="10 0 0 0" Orientation="Horizontal">
+                                    <TextBlock Text="&#xe78b;" Foreground="Red" FontFamily="Fonts/#iconfont"/>
+                                    <TextBlock Margin="5 0 0 0" Text="Automatic control systems"  Foreground="#A4ADB2" Width="148" />
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+
+                    </Grid>
+
+                    <Grid Margin="10,0,0,25">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Border Margin="5 0 5 5" Background="White" CornerRadius="10">
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="20" Color="DarkGray" Opacity="0.4" Direction="280" ShadowDepth="0" />
+                            </Border.Effect>
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="2*"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Text="Iot SCADA" VerticalAlignment="Center" Foreground="#717171" Margin="10 0 0 0"/>
+                                <TextBlock Text="SCADA" Grid.Row="1" VerticalAlignment="Center" Margin="10 0 0 0" FontSize="22"/>
+                                <Border CornerRadius="5" Width="30" Height="30" Background="#D5F8EC" Grid.Row="1" HorizontalAlignment="Right" 
+                                        VerticalAlignment="Top" Margin="0 0 5 0">
+                                    <TextBlock Text="&#xe68a;" FontSize="18" Foreground="#59E6B5" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Fonts/#iconfont"/>
+                                </Border>
+
+                                <StackPanel Grid.Row="2" VerticalAlignment="Center" Margin="10 0 0 0" Orientation="Horizontal">
+                                    <TextBlock Text="&#xe78b;" Foreground="Red" FontFamily="Fonts/#iconfont"/>
+                                    <TextBlock Margin="5 0 0 0" Text="SCADA system integration"  Foreground="#A4ADB2" Width="146" />
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+
+                        <Border Grid.Row="1" Margin="5 10 5 0" Background="White" CornerRadius="10">
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="20" Color="DarkGray" Opacity="0.4" Direction="280" ShadowDepth="0" />
+                            </Border.Effect>
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="2*"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Text="Growth" VerticalAlignment="Center" Foreground="#717171" Margin="10 0 0 0"/>
+                                <TextBlock Text="HMI" Grid.Row="1" VerticalAlignment="Center" Margin="10 0 0 0" FontSize="22"/>
+                                <Border CornerRadius="5" Width="30" Height="30" Background="#D5F8EC" Grid.Row="1" HorizontalAlignment="Right" 
+                                        VerticalAlignment="Top" Margin="0 0 5 0">
+                                    <TextBlock Text="&#xe501;" FontSize="18" Foreground="#59E6B5" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Fonts/#iconfont"/>
+                                </Border>
+
+                                <StackPanel Grid.Row="2" VerticalAlignment="Center" Margin="10 0 0 0" Orientation="Horizontal">
+                                    <TextBlock Text="&#xe78b;" Foreground="#59E6B5" FontFamily="Fonts/#iconfont"/>
+                                    <TextBlock Margin="5 0 0 0" Text="Wonderware HMI"  Foreground="#A4ADB2" />
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </UniformGrid>
+
+            </Grid>
+            <Grid x:Name="about_2"  Grid.Column="1" Visibility="Hidden">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="144*"/>
+                    <RowDefinition Height="155*"/>
+                </Grid.RowDefinitions>
+                <Grid Margin="0,0,0,38">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="394*"/>
+                        <ColumnDefinition Width="545*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Margin="0,28,360,40" Grid.ColumnSpan="2">
+                        <Border Background="#59E6B5" Margin="50 20 50 20">
+                            <Border.Effect>
+                                <DropShadowEffect Color="#59E6B5" ShadowDepth="30" BlurRadius="50" Opacity="0.8" Direction="270"/>
+                            </Border.Effect>
+                        </Border>
+
+                        <Border CornerRadius="10" Margin="10 0 10 0" Background="#59E6B5">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+                                <Border BorderThickness="1" Height="1" BorderBrush="#EBEBEB" VerticalAlignment="Center" Grid.RowSpan="2"/>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="4*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Border Background="#ffffff" Opacity="0.2" Width="35" Height="35" CornerRadius="35"/>
+                                    <TextBlock Text="&#xe69d;" FontFamily="Fonts/#iconfont" 
+                                                   FontSize="22" Foreground="White"
+                                                   VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+                                    <TextBlock Text="Local Department" Grid.Column="1" Foreground="White" VerticalAlignment="Center" FontSize="48"/>
+
+                                </Grid>
+
+                                <StackPanel Grid.Row="1" VerticalAlignment="Center" Margin="15 0 0 0">
+                                    <TextBlock Text="Number 9- GS 13 Di An, Binh Duong Province, Vietnam " FontSize="22" Foreground="White" Height="66" Width="534"/>
+                                </StackPanel>
+
+                            </Grid>
+                        </Border>
+                        <Image Source="ImageResources/local.png" Margin="736,-13,-346,-13"/>
+                        <RadioButton Style="{StaticResource defaultRadioStyle}"  Margin="594,140,-145,0" FontWeight="Bold" Background="{x:Null}">
+
+
+                            <Hyperlink NavigateUri="https://www.google.com/maps/place/C%C3%B4ng+ty+TNHH+%C4%90i%E1%BB%87n-+T%E1%BB%B1+%C4%90%E1%BB%99ng+H%C3%B3a+An+Sinh/@10.894182,106.771649,1521m/data=!3m1!1e3!4m5!3m4!1s0x0:0x108cfe01b9cc46bb!8m2!3d10.8941822!4d106.7716485?hl=vi" RequestNavigate="Hyperlink_RequestNavigate1" Foreground="#FF001D92" FontWeight="Bold" FontStyle="Normal" Background="#FF59E6B5" FontSize="20">
+                                Google Maps
+                            </Hyperlink>
+
+                        </RadioButton>
+                    </Grid>
+
+
+                </Grid>
+                <Image Source="ImageResources/mas.png" Margin="10,220,10,-30" Grid.RowSpan="2"/>
+
+            </Grid>
+            <Grid x:Name="about_3"  Grid.Column="1" Visibility="Hidden">
+
+            </Grid>
+            <Grid x:Name="about_4"  Grid.Column="1" Visibility="Hidden">
+
+            </Grid>
+            <Grid x:Name="about_5"  Grid.Column="1" Visibility="Hidden">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="138*"/>
+                    <RowDefinition Height="206*"/>
+                    <RowDefinition Height="255*"/>
+                </Grid.RowDefinitions>
+                <Border CornerRadius="10" Margin="139,0,120,10" Background="#FF5BEC28">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Border BorderThickness="1" Height="1" BorderBrush="#EBEBEB" VerticalAlignment="Center" Grid.RowSpan="2"/>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="4*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Text="Meet Our Clients" Foreground="White" VerticalAlignment="Center" Grid.ColumnSpan="2" Height="74" Margin="136,0,130,0" FontSize="36" TextAlignment="Center"/>
+
+                        </Grid>
+
+                        <StackPanel Grid.Row="1" VerticalAlignment="Center" Margin="15 0 0 0">
+                            <TextBlock Text="Clients Choose Us Their Strategic Partner" FontSize="22" Foreground="White" TextAlignment="Center"/>
+                        </StackPanel>
+
+                    </Grid>
+                </Border>
+
+                <StackPanel Orientation="Horizontal" Margin="39,30,30,26" Grid.Row="1">
+                    <Border Background="White" Grid.RowSpan="2"  Margin="40,0,0,0" CornerRadius="10" Width="129">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="DarkGray" Opacity="0.4" Direction="280" ShadowDepth="0" />
+                        </Border.Effect>
+                        <Grid Margin="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="5*"/>
+                                <RowDefinition Height="18*"/>
+
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Text="Masan" Foreground="#596B75" FontSize="13"/>
+
+                            <Image Grid.Row="1" Source="ImageResources/logo-masan.jpg" Margin="0,4,0,0"/>
+
+                        </Grid>
+                    </Border>
+                    <Border Background="White" Grid.RowSpan="2"  Margin="40,0,0,0" CornerRadius="10" Width="129">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="DarkGray" Opacity="0.4" Direction="280" ShadowDepth="0" />
+                        </Border.Effect>
+                        <Grid Margin="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="4*"/>
+                                <RowDefinition Height="19*"/>
+
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Text="Masan" Foreground="#596B75" FontSize="13"/>
+
+                            <Image Grid.Row="1" Source="ImageResources/logo-masan.jpg" Margin="0,5,0,0"/>
+
+                        </Grid>
+                    </Border>
+                    <Border Background="White" Grid.RowSpan="2"  Margin="40,0,0,0" CornerRadius="10" Width="129">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="DarkGray" Opacity="0.4" Direction="280" ShadowDepth="0" />
+                        </Border.Effect>
+                        <Grid Margin="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="4*"/>
+                                <RowDefinition Height="19*"/>
+
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Text="Masan" Foreground="#596B75" FontSize="13"/>
+
+                            <Image Grid.Row="1" Source="ImageResources/logo-masan.jpg" Margin="0,3,0,0"/>
+
+                        </Grid>
+                    </Border>
+                    <Border Background="White" Grid.RowSpan="2"  Margin="40,0,0,0" CornerRadius="10" Width="129">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="DarkGray" Opacity="0.4" Direction="280" ShadowDepth="0" />
+                        </Border.Effect>
+                        <Grid Margin="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="4*"/>
+                                <RowDefinition Height="19*"/>
+
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Text="Masan" Foreground="#596B75" FontSize="13"/>
+
+                            <Image Grid.Row="1" Source="ImageResources/logo-masan.jpg" Margin="0,3,0,0"/>
+
+                        </Grid>
+                    </Border>
+                    <Border Background="White" Grid.RowSpan="2"  Margin="40,0,0,0" CornerRadius="10" Width="129">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="DarkGray" Opacity="0.4" Direction="280" ShadowDepth="0" />
+                        </Border.Effect>
+                        <Grid Margin="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="4*"/>
+                                <RowDefinition Height="19*"/>
+
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Text="Masan" Foreground="#596B75" FontSize="13"/>
+
+                            <Image Grid.Row="1" Source="ImageResources/logo-masan.jpg" Margin="0,3,0,0"/>
+
+                        </Grid>
+                    </Border>
+
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="39,30,30,70" Grid.Row="2">
+                    <Border Background="White" Grid.RowSpan="2"  Margin="40,0,0,0" CornerRadius="10" Width="129">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="DarkGray" Opacity="0.4" Direction="280" ShadowDepth="0" />
+                        </Border.Effect>
+                        <Grid Margin="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="5*"/>
+                                <RowDefinition Height="18*"/>
+
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Text="Masan" Foreground="#596B75" FontSize="13"/>
+
+                            <Image Grid.Row="1" Source="ImageResources/logo-masan.jpg" Margin="0,4,0,0"/>
+
+                        </Grid>
+                    </Border>
+                    <Border Background="White" Grid.RowSpan="2"  Margin="40,0,0,0" CornerRadius="10" Width="129">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="DarkGray" Opacity="0.4" Direction="280" ShadowDepth="0" />
+                        </Border.Effect>
+                        <Grid Margin="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="4*"/>
+                                <RowDefinition Height="19*"/>
+
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Text="Masan" Foreground="#596B75" FontSize="13"/>
+
+                            <Image Grid.Row="1" Source="ImageResources/logo-masan.jpg" Margin="0,5,0,0"/>
+
+                        </Grid>
+                    </Border>
+                    <Border Background="White" Grid.RowSpan="2"  Margin="40,0,0,0" CornerRadius="10" Width="129">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="DarkGray" Opacity="0.4" Direction="280" ShadowDepth="0" />
+                        </Border.Effect>
+                        <Grid Margin="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="4*"/>
+                                <RowDefinition Height="19*"/>
+
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Text="Masan" Foreground="#596B75" FontSize="13"/>
+
+                            <Image Grid.Row="1" Source="ImageResources/logo-masan.jpg" Margin="0,3,0,0"/>
+
+                        </Grid>
+                    </Border>
+                    <Border Background="White" Grid.RowSpan="2"  Margin="40,0,0,0" CornerRadius="10" Width="129">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="DarkGray" Opacity="0.4" Direction="280" ShadowDepth="0" />
+                        </Border.Effect>
+                        <Grid Margin="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="4*"/>
+                                <RowDefinition Height="19*"/>
+
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Text="Masan" Foreground="#596B75" FontSize="13"/>
+
+                            <Image Grid.Row="1" Source="ImageResources/logo-masan.jpg" Margin="0,3,0,0"/>
+
+                        </Grid>
+                    </Border>
+                    <Border Background="White" Grid.RowSpan="2"  Margin="40,0,0,0" CornerRadius="10" Width="129">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="DarkGray" Opacity="0.4" Direction="280" ShadowDepth="0" />
+                        </Border.Effect>
+                        <Grid Margin="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="4*"/>
+                                <RowDefinition Height="19*"/>
+
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Text="Masan" Foreground="#596B75" FontSize="13"/>
+
+                            <Image Grid.Row="1" Source="ImageResources/logo-masan.jpg" Margin="0,3,0,0"/>
+
+                        </Grid>
+                    </Border>
+
+                </StackPanel>
+
+
+
+            </Grid>
+            <Grid x:Name="about_6"  Grid.Column="1" Visibility="Hidden">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="203*"/>
+                    <RowDefinition Height="395*"/>
+                </Grid.RowDefinitions>
+                <Border CornerRadius="10" Margin="139,10,120,10" Background="#FF463BD4">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Border BorderThickness="1" Height="1" BorderBrush="#EBEBEB" VerticalAlignment="Center" Grid.RowSpan="2"/>
+
+                        <Grid>
+
+                            <TextBlock Text="What Our Customers Are Saying" Foreground="White" VerticalAlignment="Center" Grid.ColumnSpan="2" Height="74" Margin="30,0,18,0" FontSize="36" TextAlignment="Center"/>
+
+                        </Grid>
+
+                        <StackPanel Grid.Row="1" VerticalAlignment="Center" Margin="15 0 0 0">
+                            <TextBlock Text="We helped clients achieve their goals much faster" FontSize="22" Foreground="White" TextAlignment="Center" Height="37"/>
+                        </StackPanel>
+
+                    </Grid>
+                </Border>
+
+                <StackPanel Orientation="Horizontal" Margin="0,203,0,30" Grid.RowSpan="2">
+                    <Border Background="White" Grid.Column="1" Grid.RowSpan="2" Margin="10,0,0,0"  CornerRadius="10" Width="214" Height="300">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="DarkGray" Opacity="0.4" Direction="280" ShadowDepth="0" />
+                        </Border.Effect>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="36*"/>
+                                <RowDefinition Height="15*"/>
+                                <RowDefinition Height="49*"/>
+                            </Grid.RowDefinitions>
+                            <Image Source="ImageResources/mas.png" Stretch="Fill" Margin="66,28,73,10">
+                                <Image.Clip>
+                                    <EllipseGeometry RadiusX="34" RadiusY="34" Center="34,34"/>
+                                </Image.Clip>
+                            </Image>
+                            <StackPanel Grid.Row="1" Orientation="Vertical">
+                                <TextBlock Text="Dr. JD" Height="25" TextAlignment="Center" FontWeight="Bold" />
+                                <TextBlock Text="CEO of Masan" Height="25" TextAlignment="Center" FontWeight="Bold" />
+                            </StackPanel>
+                            <TextBlock Grid.Row="2" Text="System migration for a traffic engineering planning tool – an integrated traffic tool that incorporates all necessary features based on a shared data pool for the traffic planner, the data provider, the software engineer, the traffic operator, and the service technician. ​" FontSize="12" Margin="0,5,0,10" Foreground="Black" TextWrapping="Wrap" TextAlignment="Center"/>
+                        </Grid>
+                    </Border>
+                    <Border Background="White" Grid.Column="1" Grid.RowSpan="2" Margin="20 0 0 0"  CornerRadius="10" Width="214" Height="300">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="DarkGray" Opacity="0.4" Direction="280" ShadowDepth="0" />
+                        </Border.Effect>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="36*"/>
+                                <RowDefinition Height="15*"/>
+                                <RowDefinition Height="49*"/>
+                            </Grid.RowDefinitions>
+                            <Image Source="ImageResources/mas.png" Stretch="Fill" Margin="66,28,73,10">
+                                <Image.Clip>
+                                    <EllipseGeometry RadiusX="34" RadiusY="34" Center="34,34"/>
+                                </Image.Clip>
+                            </Image>
+                            <StackPanel Grid.Row="1" Orientation="Vertical">
+                                <TextBlock Text="Dr. JD" Height="25" TextAlignment="Center" FontWeight="Bold" />
+                                <TextBlock Text="CEO of Masan" Height="25" TextAlignment="Center" FontWeight="Bold" />
+                            </StackPanel>
+                            <TextBlock Grid.Row="2" Text="System migration for a traffic engineering planning tool – an integrated traffic tool that incorporates all necessary features based on a shared data pool for the traffic planner, the data provider, the software engineer, the traffic operator, and the service technician. ​" FontSize="12" Margin="0,5,0,10" Foreground="Black" TextWrapping="Wrap" TextAlignment="Center"/>
+                        </Grid>
+                    </Border>
+                    <Border Background="White" Grid.Column="1" Grid.RowSpan="2" Margin="20 0 0 0"  CornerRadius="10" Width="214" Height="300">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="DarkGray" Opacity="0.4" Direction="280" ShadowDepth="0" />
+                        </Border.Effect>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="36*"/>
+                                <RowDefinition Height="15*"/>
+                                <RowDefinition Height="49*"/>
+                            </Grid.RowDefinitions>
+                            <Image Source="ImageResources/mas.png" Stretch="Fill" Margin="66,28,73,10">
+                                <Image.Clip>
+                                    <EllipseGeometry RadiusX="34" RadiusY="34" Center="34,34"/>
+                                </Image.Clip>
+                            </Image>
+                            <StackPanel Grid.Row="1" Orientation="Vertical">
+                                <TextBlock Text="Dr. JD" Height="25" TextAlignment="Center" FontWeight="Bold" />
+                                <TextBlock Text="CEO of Masan" Height="25" TextAlignment="Center" FontWeight="Bold" />
+                            </StackPanel>
+                            <TextBlock Grid.Row="2" Text="System migration for a traffic engineering planning tool – an integrated traffic tool that incorporates all necessary features based on a shared data pool for the traffic planner, the data provider, the software engineer, the traffic operator, and the service technician. ​" FontSize="12" Margin="0,5,0,10" Foreground="Black" TextWrapping="Wrap" TextAlignment="Center"/>
+                        </Grid>
+                    </Border>
+                    <Border Background="White" Grid.Column="1" Grid.RowSpan="2" Margin="20 0 0 0"  CornerRadius="10" Width="214" Height="300">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="DarkGray" Opacity="0.4" Direction="280" ShadowDepth="0" />
+                        </Border.Effect>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="36*"/>
+                                <RowDefinition Height="15*"/>
+                                <RowDefinition Height="49*"/>
+                            </Grid.RowDefinitions>
+                            <Image Source="ImageResources/mas.png" Stretch="Fill" Margin="66,28,73,10">
+                                <Image.Clip>
+                                    <EllipseGeometry RadiusX="34" RadiusY="34" Center="34,34"/>
+                                </Image.Clip>
+                            </Image>
+                            <StackPanel Grid.Row="1" Orientation="Vertical">
+                                <TextBlock Text="Dr. JD" Height="25" TextAlignment="Center" FontWeight="Bold" />
+                                <TextBlock Text="CEO of Masan" Height="25" TextAlignment="Center" FontWeight="Bold" />
+                            </StackPanel>
+                            <TextBlock Grid.Row="2" Text="System migration for a traffic engineering planning tool – an integrated traffic tool that incorporates all necessary features based on a shared data pool for the traffic planner, the data provider, the software engineer, the traffic operator, and the service technician. ​" FontSize="12" Margin="0,5,0,10" Foreground="Black" TextWrapping="Wrap" TextAlignment="Center"/>
+                        </Grid>
+                    </Border>
+
+
+                </StackPanel>
+            </Grid>
+            <Grid x:Name="about_7" Grid.ColumnSpan="2" Margin="201,0,8,0" Visibility="Hidden">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Border CornerRadius="10" Margin="139,10,187,170" Grid.RowSpan="2">
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF3BC7A3" Offset="0.305"/>
+                            <GradientStop Color="#FFF1C6C6" Offset="1"/>
+                            <GradientStop Color="#FF49D498" Offset="0.47"/>
+                            <GradientStop Color="#FF93B17C" Offset="0.679"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="7*"/>
+                            <RowDefinition Height="24*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="43*"/>
+                            <ColumnDefinition Width="83*"/>
+
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Text="Drop A Message to our team to See how we can help" Foreground="Black" VerticalAlignment="Top" Height="43" Margin="15,10,4,0" FontSize="24" TextAlignment="Center" FontWeight="Bold" Grid.ColumnSpan="2"/>
+
+                        <Border Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="36"  Margin="21,59,0,0"
+                        Background="#FFC5EAED" CornerRadius="10" Width="564" Grid.ColumnSpan="2" Grid.RowSpan="2">
+                            <Grid Margin="-6,0,0,0" HorizontalAlignment="Left" Width="390">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+
+
+                                <TextBox Name="inputTextName" Grid.Column="1" Width="300" Margin="1,0,39,0" >
+                                    <TextBox.Resources>
+                                        <VisualBrush x:Key="hinttext" TileMode="None" AlignmentX="Left" Stretch="None">
+                                            <VisualBrush.Visual>
+                                                <TextBlock FontStyle="Normal" Foreground="#76CBD2" Text="Your Full Name "/>
+                                            </VisualBrush.Visual>
+                                        </VisualBrush>
+                                    </TextBox.Resources>
+
+                                    <TextBox.Style>
+                                        <Style TargetType="TextBox">
+                                            <Setter Property="VerticalAlignment" Value="Center"/>
+                                            <Setter Property="FontSize" Value="14"/>
+                                            <Setter Property="BorderThickness" Value="0"/>
+                                            <Setter Property="Background" Value="Transparent"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="Text" Value="">
+                                                    <Setter Property="Background" Value="{StaticResource hinttext}"/>
+                                                </Trigger>
+
+                                                <Trigger Property="Text" Value="{x:Null}">
+                                                    <Setter Property="Background" Value="{StaticResource hinttext}"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBox.Style>
+
+                                </TextBox>
+                            </Grid>
+                        </Border>
+                        <Border Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="49"  Margin="21,30,0,0"
+                        Background="#FFC5EAED" CornerRadius="10" Width="564" Grid.ColumnSpan="2">
+                            <Grid Margin="-6,0,0,0" HorizontalAlignment="Left" Width="390">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+
+
+                                <TextBox Name="inputTextEmail" Grid.Column="1" Width="300" Margin="1,0,39,0" >
+                                    <TextBox.Resources>
+                                        <VisualBrush x:Key="hinttext" TileMode="None" AlignmentX="Left" Stretch="None">
+                                            <VisualBrush.Visual>
+                                                <TextBlock FontStyle="Normal" Foreground="#76CBD2" Text="Your Business E-mail* "/>
+                                            </VisualBrush.Visual>
+                                        </VisualBrush>
+                                    </TextBox.Resources>
+
+                                    <TextBox.Style>
+                                        <Style TargetType="TextBox">
+                                            <Setter Property="VerticalAlignment" Value="Center"/>
+                                            <Setter Property="FontSize" Value="14"/>
+                                            <Setter Property="BorderThickness" Value="0"/>
+                                            <Setter Property="Background" Value="Transparent"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="Text" Value="">
+                                                    <Setter Property="Background" Value="{StaticResource hinttext}"/>
+                                                </Trigger>
+
+                                                <Trigger Property="Text" Value="{x:Null}">
+                                                    <Setter Property="Background" Value="{StaticResource hinttext}"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBox.Style>
+
+                                </TextBox>
+                            </Grid>
+                        </Border>
+                        <Border Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="48"  Margin="21,111,0,0"
+                        Background="#FFC5EAED" CornerRadius="10" Width="564" Grid.ColumnSpan="2">
+                            <Grid Margin="-6,0,0,0" HorizontalAlignment="Left" Width="390">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+
+
+                                <TextBox Name="inputTextPhoneNumber" Grid.Column="1" Width="300" Margin="1,0,39,0" >
+                                    <TextBox.Resources>
+                                        <VisualBrush x:Key="hinttext" TileMode="None" AlignmentX="Left" Stretch="None">
+                                            <VisualBrush.Visual>
+                                                <TextBlock FontStyle="Normal" Foreground="#76CBD2" Text="Your Phone Number "/>
+                                            </VisualBrush.Visual>
+                                        </VisualBrush>
+                                    </TextBox.Resources>
+
+                                    <TextBox.Style>
+                                        <Style TargetType="TextBox">
+                                            <Setter Property="VerticalAlignment" Value="Center"/>
+                                            <Setter Property="FontSize" Value="14"/>
+                                            <Setter Property="BorderThickness" Value="0"/>
+                                            <Setter Property="Background" Value="Transparent"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="Text" Value="">
+                                                    <Setter Property="Background" Value="{StaticResource hinttext}"/>
+                                                </Trigger>
+
+                                                <Trigger Property="Text" Value="{x:Null}">
+                                                    <Setter Property="Background" Value="{StaticResource hinttext}"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBox.Style>
+
+                                </TextBox>
+                            </Grid>
+                        </Border>
+                        <Border Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="122"  Margin="21,184,0,0"
+                        Background="#FFC5EAED" CornerRadius="10" Width="564" Grid.ColumnSpan="2">
+                            <Grid Margin="-6,0,0,0" HorizontalAlignment="Left" Width="390">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+
+
+                                <TextBox Name="inputMailBody" Grid.Column="1" Width="300" Margin="1,0,39,0" Height="48" FontSize="18" >
+                                    <TextBox.Resources>
+                                        <VisualBrush x:Key="hinttext" TileMode="None" AlignmentX="Left" Stretch="None">
+                                            <VisualBrush.Visual>
+                                                <TextBlock FontStyle="Normal" Foreground="#76CBD2" Text="Tell Us what are you looking for"/>
+                                            </VisualBrush.Visual>
+                                        </VisualBrush>
+                                    </TextBox.Resources>
+
+                                    <TextBox.Style>
+                                        <Style TargetType="TextBox">
+                                            <Setter Property="VerticalAlignment" Value="Center"/>
+                                            <Setter Property="FontSize" Value="14"/>
+                                            <Setter Property="BorderThickness" Value="0"/>
+                                            <Setter Property="Background" Value="Transparent"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="Text" Value="">
+                                                    <Setter Property="Background" Value="{StaticResource hinttext}"/>
+                                                </Trigger>
+
+                                                <Trigger Property="Text" Value="{x:Null}">
+                                                    <Setter Property="Background" Value="{StaticResource hinttext}"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBox.Style>
+
+                                </TextBox>
+                            </Grid>
+                        </Border>
+
+
+                    </Grid>
+                </Border>
+                <Button x:Name="btnSubmit" Content="Submit" Margin="277,144,403,76" Grid.Row="1" FontWeight="Bold" FontSize="20" Background="#FF174EB9" Foreground="White" Click="btnSubmit_Click" />
+            </Grid>
+
+        </Grid>
+        <Grid x:Name="grid_product" Margin="0,154,10,60" Grid.RowSpan="2" Visibility="Hidden">
+
+            <Image Source="ImageResources/a1.png" Margin="0,3,0,10"/>
+
+        </Grid>
+        <Grid x:Name="grid_SCADA" Margin="0,154,10,60" Grid.RowSpan="2" Visibility="Hidden">
+
+            <Image Source="ImageResources/a1.png" Margin="0,3,0,10"/>
+
+        </Grid>
+        <Grid x:Name="grid_hmi" Margin="0,154,10,60" Grid.RowSpan="2" Visibility="Hidden">
+
+            <Image Source="ImageResources/a1.png" Margin="0,3,0,10"/>
+
+        </Grid>
+        <Grid x:Name="grid_accessory" Margin="0,154,10,60" Grid.RowSpan="2" Visibility="Hidden">
+
+            <Image Source="ImageResources/a1.png" Margin="0,3,0,10"/>
+
+        </Grid>
+        <Grid x:Name="grid_solution" Margin="0,154,10,60" Grid.RowSpan="2" Visibility="Hidden">
+
+            <Image Source="ImageResources/a1.png" Margin="0,3,0,10"/>
+
+        </Grid>
+
+    </Grid>
+
+</Window>

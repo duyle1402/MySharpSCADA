@@ -1,0 +1,101 @@
+﻿Installing assembly 'C:\ConfigPLC\Application\ServiceConfig.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\ConfigPLC\Application\ServiceConfig.InstallLog
+   assemblypath = C:\ConfigPLC\Application\ServiceConfig.exe
+Installing service ServicePLC...
+Service ServicePLC has been successfully installed.
+Creating EventLog source ServicePLC in log Application...
+Committing assembly 'C:\ConfigPLC\Application\ServiceConfig.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\ConfigPLC\Application\ServiceConfig.InstallLog
+   assemblypath = C:\ConfigPLC\Application\ServiceConfig.exe
+Uninstalling assembly 'C:\ConfigPLC\Application\ServiceConfig.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\ConfigPLC\Application\ServiceConfig.InstallLog
+   assemblypath = C:\ConfigPLC\Application\ServiceConfig.exe
+Removing EventLog source ServicePLC.
+Service ServicePLC is being removed from the system...
+Service ServicePLC was successfully removed from the system.
+Uninstalling assembly 'C:\ConfigPLC\Application\ServiceConfig.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\ConfigPLC\Application\ServiceConfig.InstallLog
+   assemblypath = C:\ConfigPLC\Application\ServiceConfig.exe
+Removing EventLog source ServicePLC.
+Warning: The source ServicePLC is not registered on the local machine.
+Service ServicePLC is being removed from the system...
+An exception occurred during the uninstallation of the System.ServiceProcess.ServiceInstaller installer.
+System.ComponentModel.Win32Exception: The specified service does not exist as an installed service
+An exception occurred while uninstalling. This exception will be ignored and the uninstall will continue. However, the application might not be fully uninstalled after the uninstall is complete.
+Installing assembly 'C:\Users\proch\Desktop\TT\ConfigPLC\Application\ServiceConfig.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\proch\Desktop\TT\ConfigPLC\Application\ServiceConfig.InstallLog
+   assemblypath = C:\Users\proch\Desktop\TT\ConfigPLC\Application\ServiceConfig.exe
+Installing service ServicePLC...
+Service ServicePLC has been successfully installed.
+Creating EventLog source ServicePLC in log Application...
+Committing assembly 'C:\Users\proch\Desktop\TT\ConfigPLC\Application\ServiceConfig.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\proch\Desktop\TT\ConfigPLC\Application\ServiceConfig.InstallLog
+   assemblypath = C:\Users\proch\Desktop\TT\ConfigPLC\Application\ServiceConfig.exe
+Installing assembly 'C:\Users\proch\Desktop\TT\ConfigPLC\Application\ServiceConfig.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\proch\Desktop\TT\ConfigPLC\Application\ServiceConfig.InstallLog
+   assemblypath = C:\Users\proch\Desktop\TT\ConfigPLC\Application\ServiceConfig.exe
+Installing service ServicePLC...
+Creating EventLog source ServicePLC in log Application...
+Rolling back assembly 'C:\Users\proch\Desktop\TT\ConfigPLC\Application\ServiceConfig.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\proch\Desktop\TT\ConfigPLC\Application\ServiceConfig.InstallLog
+   assemblypath = C:\Users\proch\Desktop\TT\ConfigPLC\Application\ServiceConfig.exe
+Restoring event log to previous state for source ServicePLC.
+Installing assembly 'C:\Users\proch\Desktop\TT\ConfigPLC\Application\ServiceConfig.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\proch\Desktop\TT\ConfigPLC\Application\ServiceConfig.InstallLog
+   assemblypath = C:\Users\proch\Desktop\TT\ConfigPLC\Application\ServiceConfig.exe
+Installing service ServicePLC...
+Service ServicePLC has been successfully installed.
+Creating EventLog source ServicePLC in log Application...
+Committing assembly 'C:\Users\proch\Desktop\TT\ConfigPLC\Application\ServiceConfig.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\proch\Desktop\TT\ConfigPLC\Application\ServiceConfig.InstallLog
+   assemblypath = C:\Users\proch\Desktop\TT\ConfigPLC\Application\ServiceConfig.exe
+Uninstalling assembly 'C:\Users\proch\Desktop\TT\ConfigPLC\Application\ServiceConfig.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\proch\Desktop\TT\ConfigPLC\Application\ServiceConfig.InstallLog
+   assemblypath = C:\Users\proch\Desktop\TT\ConfigPLC\Application\ServiceConfig.exe
+Removing EventLog source ServicePLC.
+Service ServicePLC is being removed from the system...
+Service ServicePLC was successfully removed from the system.
+Attempt to stop service ServicePLC.
+Installing assembly 'C:\Users\proch\Desktop\TT\ConfigPLC\Application\ServiceConfig.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\proch\Desktop\TT\ConfigPLC\Application\ServiceConfig.InstallLog
+   assemblypath = C:\Users\proch\Desktop\TT\ConfigPLC\Application\ServiceConfig.exe
+Installing service ServicePLC...
+Service ServicePLC has been successfully installed.
+Creating EventLog source ServicePLC in log Application...
+Committing assembly 'C:\Users\proch\Desktop\TT\ConfigPLC\Application\ServiceConfig.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\proch\Desktop\TT\ConfigPLC\Application\ServiceConfig.InstallLog
+   assemblypath = C:\Users\proch\Desktop\TT\ConfigPLC\Application\ServiceConfig.exe
+Uninstalling assembly 'C:\Users\proch\Desktop\TT\ConfigPLC\Application\ServiceConfig.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\proch\Desktop\TT\ConfigPLC\Application\ServiceConfig.InstallLog
+   assemblypath = C:\Users\proch\Desktop\TT\ConfigPLC\Application\ServiceConfig.exe
+Removing EventLog source ServicePLC.
+Service ServicePLC is being removed from the system...
+Service ServicePLC was successfully removed from the system.

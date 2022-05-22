@@ -1,0 +1,232 @@
+﻿<UserControl x:Class="WpfAppServer.Pape9"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:my="clr-namespace:HMIControl;assembly=HMIControl" 
+             mc:Ignorable="d" Name="Pape11" Width="1920" Height="1080" d:DesignHeight="1072" d:DesignWidth="1912" Background="#FFC3F3F0" 
+             Loaded="HMI_Loaded" Unloaded="HMI_Unloaded">
+    <Canvas x:Name="cvs1">
+        <my:TubeLine Canvas.Left="533" Canvas.Top="808" Height="11" Width="482"/>
+        <Image Height="474" Canvas.Left="127" Canvas.Top="367" Width="260" Source="ImageResources/TANK 0109.png" Stretch="Fill"/>
+        <Image Height="292" Canvas.Left="601" Canvas.Top="550" Width="331" Source="ImageResources/may nen_01.png" Stretch="Fill"/>
+        <my:TubeLine Canvas.Left="52" Canvas.Top="267" Height="11"/>
+        <my:TubeArc Canvas.Left="152" Canvas.Top="267" Height="14" Width="14"/>
+        <my:TubeLine Canvas.Left="111" Canvas.Top="325" Height="11" RenderTransformOrigin="0.5,0.5">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <my:HVValueIndicator Height="16" Canvas.Left="28" Canvas.Top="264" Width="24" RenderTransformOrigin="0.5,0.5"/>
+        <my:TubeArc Canvas.Left="405" Canvas.Top="734" Height="14" Width="14" RenderTransformOrigin="23,28.071">
+            <my:TubeArc.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeArc.RenderTransform>
+        </my:TubeArc>
+        <my:TubeArc Canvas.Left="556" Canvas.Top="779" Height="14" Width="14" RenderTransformOrigin="23,28.071">
+            <my:TubeArc.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="179.6"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeArc.RenderTransform>
+        </my:TubeArc>
+        <my:TubeArc Canvas.Left="618" Canvas.Top="823" Height="14" Width="14" RenderTransformOrigin="23,28.071">
+            <my:TubeArc.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeArc.RenderTransform>
+        </my:TubeArc>
+        <my:TubeArc Canvas.Left="432" Canvas.Top="805" Height="14" Width="14" RenderTransformOrigin="0.5,0.5">
+            <my:TubeArc.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeArc.RenderTransform>
+        </my:TubeArc>
+        <my:TubeLine Canvas.Left="253" Canvas.Top="617" Height="11" RenderTransformOrigin="0.5,0.5" Width="366">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="89.6"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <my:TubeLine Canvas.Left="383" Canvas.Top="417" Height="12" Width="771"/>
+        <my:TubeLine Canvas.Left="1061" Canvas.Top="747" Height="11" RenderTransformOrigin="0.5,0.5" Width="106">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="89.6"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <my:TubeLine Canvas.Left="1249" Canvas.Top="808" Height="11" Width="511"/>
+        <Image Height="292" Canvas.Left="1340" Canvas.Top="550" Width="331" Source="ImageResources/may nen_01.png" Stretch="Fill"/>
+        <my:TubeArc Canvas.Left="1134" Canvas.Top="734" Height="14" Width="14" RenderTransformOrigin="23,28.071">
+            <my:TubeArc.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeArc.RenderTransform>
+        </my:TubeArc>
+        <my:TubeArc Canvas.Left="1161" Canvas.Top="805" Height="14" Width="14" RenderTransformOrigin="0.5,0.5">
+            <my:TubeArc.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeArc.RenderTransform>
+        </my:TubeArc>
+        <my:TubeLine Canvas.Left="978" Canvas.Top="613" Height="11" RenderTransformOrigin="0.5,0.5" Width="374">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="89.6"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <my:TubeLine Canvas.Left="1790" Canvas.Top="747" Height="11" RenderTransformOrigin="0.5,0.5" Width="106">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="89.6"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <my:TubeT Canvas.Left="407" Canvas.Top="394" Height="58" Width="55" RenderTransformOrigin="0.5,0.5">
+            <my:TubeT.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeT.RenderTransform>
+        </my:TubeT>
+        <my:TubeArc Canvas.Left="1154" Canvas.Top="417" Width="15"/>
+        <my:HVValueIndicator Height="16" Canvas.Left="1101" Canvas.Top="679" Width="24" RenderTransformOrigin="0.5,0.5">
+            <my:HVValueIndicator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:HVValueIndicator.RenderTransform>
+        </my:HVValueIndicator>
+        <my:HVValueIndicator Height="16" Canvas.Left="1830" Canvas.Top="679" Width="24" RenderTransformOrigin="0.5,0.5">
+            <my:HVValueIndicator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:HVValueIndicator.RenderTransform>
+        </my:HVValueIndicator>
+        <my:TubeLine Canvas.Left="96" Canvas.Top="253" Height="6" RenderTransformOrigin="0.5,0.5" Width="24">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="89.6"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <Ellipse Fill="#FFF4F4F5" Height="20" Canvas.Left="98" Stroke="Black" Canvas.Top="236" Width="20"/>
+        <Label Content="PT" Canvas.Left="97" Canvas.Top="233" FontSize="11"/>
+        <Label Content="OUT" Canvas.Left="26" Canvas.Top="229" FontSize="18" RenderTransformOrigin="0.523,0.52"/>
+        <my:TubeLine Canvas.Left="547" Canvas.Top="794" Height="6" RenderTransformOrigin="0.5,0.5" Width="24">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="89.6"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <Ellipse Fill="#FFF4F4F5" Height="20" Canvas.Left="549" Stroke="Black" Canvas.Top="777" Width="20"/>
+        <Label Content="PT" Canvas.Left="548" Canvas.Top="774" FontSize="11"/>
+        <my:TubeLine Canvas.Left="962" Canvas.Top="794" Height="6" RenderTransformOrigin="0.5,0.5" Width="24">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="89.6"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <Ellipse Fill="#FFF4F4F5" Height="20" Canvas.Left="964" Stroke="Black" Canvas.Top="777" Width="20"/>
+        <Label Content="PT" Canvas.Left="963" Canvas.Top="774" FontSize="11"/>
+        <Label Content="IN" Canvas.Left="1099" Canvas.Top="639" FontSize="18" RenderTransformOrigin="0.523,0.52"/>
+        <my:TubeLine Canvas.Left="1275" Canvas.Top="794" Height="6" RenderTransformOrigin="0.5,0.5" Width="24">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="89.6"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <Ellipse Fill="#FFF4F4F5" Height="20" Canvas.Left="1277" Stroke="Black" Canvas.Top="776" Width="20"/>
+        <Label Content="PT" Canvas.Left="1276" Canvas.Top="774" FontSize="11"/>
+        <my:TubeLine Canvas.Left="1716" Canvas.Top="794" Height="6" RenderTransformOrigin="0.5,0.5" Width="24">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="89.6"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <Ellipse Fill="#FFF4F4F5" Height="20" Canvas.Left="1718" Stroke="Black" Canvas.Top="777" Width="20"/>
+        <Label Content="PT" Canvas.Left="1717" Canvas.Top="774" FontSize="11"/>
+        <Label Content="IN" Canvas.Left="1828" Canvas.Top="639" FontSize="18" RenderTransformOrigin="0.523,0.52"/>
+        <my:VAN2_Ngang Canvas.Left="1015" Canvas.Top="798" Height="31" Width="59"/>
+        <my:TubeLine Canvas.Left="1074" Canvas.Top="808" Height="11" Width="32"/>
+        <my:VAN2_Ngang Canvas.Left="1190" Canvas.Top="798" Height="31" Width="59"/>
+        <my:TubeLine Canvas.Left="1175" Canvas.Top="808" Height="11" Width="15"/>
+        <my:VAN2_Ngang Canvas.Left="1760" Canvas.Top="797" Height="31" Width="59"/>
+        <my:TubeLine Canvas.Left="1819" Canvas.Top="808" Height="11" Width="17"/>
+        <my:VAN2_Ngang Canvas.Left="474" Canvas.Top="798" Height="31" Width="59"/>
+        <my:TubeLine Canvas.Left="446" Canvas.Top="808" Height="11" Width="28"/>
+    </Canvas>
+</UserControl>

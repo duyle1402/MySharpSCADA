@@ -1,0 +1,330 @@
+﻿<UserControl 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:my="clr-namespace:HMIControl;assembly=HMIControl" 
+             xmlns:HMI_Control="clr-namespace:HMI_Control;assembly=HMI_Control" xmlns:WpfHMIControl="clr-namespace:WpfHMIControl;assembly=WpfHMIControl" xmlns:ec="http://schemas.microsoft.com/expression/2010/controls" xmlns:extToolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended" xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0" x:Class="WpfAppServer.Pape11" 
+             mc:Ignorable="d" x:Name="Pape31" Width="1920" Height="1080" d:DesignHeight="1072" d:DesignWidth="1912" Background="#FFC3F3F0"
+             Loaded="HMI_Loaded" Unloaded="HMI_Unloaded">
+
+
+
+    <Canvas x:Name="cvs1" >
+        <!--<ToolBarTray Background="Transparent"  Canvas.Left="755" Canvas.Bottom="0" Name="cvs31" Orientation="Vertical" Width="145" Opacity="100" Canvas.Top="561" Height="511" Grid.RowSpan="2" Margin="0,0,0,-21" Visibility="Visible">
+            <ToolBar FontFamily="Times New Roman" Margin="21,54,-32,-37" Background="#FF1A7889">
+
+                <my:HMILable   Height="100"  FontSize="15"  Width="82" HorizontalAlignment="Left" VerticalAlignment="Center" BorderThickness="0" Background="#FF51D65D" IsHitTestVisible="False" FontWeight="Bold" HorizontalContentAlignment="Left" Text="START" Focusable="False" IsTabStop="False" IsEnabled="False" Foreground="#FF00FB39" />
+                <my:HMIButton  Content="Trend Time" x:Name="btnRT" Height="36"  FontSize="15" TagWindowText="WpfAppServer.RuntimeChart;" Width="82" HorizontalAlignment="Left" VerticalAlignment="Center" BorderThickness="0" Background="#FF1A7889" IsHitTestVisible="True" FontWeight="Bold" HorizontalContentAlignment="Left" />
+                <my:HMIButton  Content="Trend Data" x:Name="btnTrend"   IsUnique="True" Height="36" FontWeight="Bold" FontSize="15" TagWriteText="" TagWindowText="WpfAppServer.Trend;" Width="82" HorizontalAlignment="Left" VerticalAlignment="Center" BorderThickness="0" Background="#FF1A7889" HorizontalContentAlignment="Left"/>
+                <my:HMIButton  Content="Data Table" x:Name="btnData" IsUnique="False" Height="36" FontWeight="Bold" FontSize="15" TagWindowText="WpfAppServer.ReportArchive;" Width="77" HorizontalAlignment="Left" VerticalAlignment="Center" BorderThickness="0" Background="#FF1A7889" HorizontalContentAlignment="Left"/>
+                <my:HMIButton  Content="Data Tag" x:Name="btnTag"       IsUnique="True" Height="36" FontWeight="Bold" FontSize="15" TagWindowText="WpfAppServer.TagMonitor;" IsModel="True" Width="77" HorizontalAlignment="Left" VerticalAlignment="Center" BorderThickness="0" Background="#FF1A7889" HorizontalContentAlignment="Left"/>
+
+                <my:HMIButton  Content="Alarm" x:Name="btnAlarm"      IsUnique="True" Height="35" FontWeight="Bold" FontSize="15" TagWindowText="WpfAppServer.AlarmSet;" IsPulse="True" Width="77" HorizontalAlignment="Left" VerticalAlignment="Center" BorderThickness="0" Background="#FF1A7889" HorizontalContentAlignment="Left"/>
+                <my:HMIButton  Content="Settings" x:Name="btnSettings"   TagWindowText="WpfAppServer.FAppServer.Settings;"   IsUnique="True" Height="35" FontWeight="Bold" FontSize="15"  IsPulse="True" Width="77" HorizontalAlignment="Left" VerticalAlignment="Center" BorderThickness="0" Background="#FF1A7889" HorizontalContentAlignment="Left"/>
+                <my:HMIButton  Content="Help" x:Name="btnHelp"   TagWindowText="WpfAppServer.FAppServer.HelpAS;"   IsUnique="True" Height="35" FontWeight="Bold" FontSize="15"  IsPulse="True" Width="77" HorizontalAlignment="Left" VerticalAlignment="Center" BorderThickness="0" Background="#FF1A7889" HorizontalContentAlignment="Left"/>
+                <my:HMIButton Content="Exit" x:Name="btnExit" Height="36" FontSize="15"  Width="77" VerticalAlignment="Center" HorizontalAlignment="Left" BorderThickness="0" HorizontalContentAlignment="Left" FontWeight="Bold" >
+                    <my:HMIButton.Background>
+                        <ImageBrush Stretch="Uniform"/>
+                    </my:HMIButton.Background>
+
+                </my:HMIButton>
+            </ToolBar>
+            <ToolBar Margin="-1,-372,55,33" Background="#FF1A7889" >
+                <my:HMIButton  Name="btnStart1"  Height="100" FontWeight="Normal" FontSize="15"  Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="0" Focusable="False" IsHitTestVisible="False" IsTabStop="False"   >
+                    <my:HMIButton.Background>
+                        <ImageBrush ImageSource="Resources/icons8-menu-24.png" Stretch="Uniform"/>
+                    </my:HMIButton.Background>
+                </my:HMIButton>
+                <my:HMIButton  Name="btnRT1"  Height="36" FontWeight="Normal" FontSize="15"  Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="0" Focusable="False" IsHitTestVisible="False" IsTabStop="False"   >
+                    <my:HMIButton.Background>
+                        <ImageBrush ImageSource="Resources/icons8-combo-chart-30.png" Stretch="Uniform"/>
+                    </my:HMIButton.Background>
+                </my:HMIButton>
+                <my:HMIButton  Name="btnTrend1"   Height="36" FontWeight="Normal" FontSize="15" TagWriteText=""  Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="0" Focusable="False" IsHitTestVisible="False" IsTabStop="False" >
+                    <my:HMIButton.Background>
+                        <ImageBrush ImageSource="Resources/icons8-line-chart-30.png" Stretch="Uniform"/>
+                    </my:HMIButton.Background>
+                </my:HMIButton>
+                <my:HMIButton  Name="btnData1"  Height="36" FontWeight="Normal" FontSize="15"  Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="0" Focusable="False" IsHitTestVisible="False" IsTabStop="False" >
+                    <my:HMIButton.Background>
+                        <ImageBrush ImageSource="Resources/icons8-pdf-30.png" Stretch="Uniform"/>
+                    </my:HMIButton.Background>
+                </my:HMIButton>
+                <my:HMIButton  Name="btnTag1"  Height="36" FontWeight="Normal" FontSize="15" IsModel="True" Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="0" Focusable="False" IsHitTestVisible="False" IsTabStop="False" >
+                    <my:HMIButton.Background>
+                        <ImageBrush ImageSource="Resources/icons8-tag-64.png" Stretch="Uniform"/>
+                    </my:HMIButton.Background>
+                </my:HMIButton>
+
+                <my:HMIButton  Name="btnAlarm1"    Height="36" FontWeight="Normal" FontSize="15"  IsPulse="True" Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="0" Focusable="False" IsHitTestVisible="False" IsTabStop="False" >
+                    <my:HMIButton.Background>
+                        <ImageBrush ImageSource="Resources/icons8-alarm-30.png" Stretch="Uniform"/>
+                    </my:HMIButton.Background>
+                </my:HMIButton>
+                <my:HMIButton  Name="btnSettings1"    Height="36" FontWeight="Normal" FontSize="15"  IsPulse="True" Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="0" Focusable="False" IsHitTestVisible="False" IsTabStop="False" >
+                    <my:HMIButton.Background>
+                        <ImageBrush ImageSource="Resources/icons8-settings-50.png" Stretch="Uniform"/>
+                    </my:HMIButton.Background>
+                </my:HMIButton>
+
+                <my:HMIButton  Name="btnHelp1"    Height="36" FontWeight="Normal" FontSize="15"  IsPulse="True" Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="0" Focusable="False" IsHitTestVisible="False" IsTabStop="False" >
+                    <my:HMIButton.Background>
+                        <ImageBrush ImageSource="Resources/icons8-help-50.png" Stretch="Uniform"/>
+                    </my:HMIButton.Background>
+                </my:HMIButton>
+                <my:HMIButton  Name="btnExit1"  Height="36" FontSize="15" Width="20" VerticalAlignment="Center" HorizontalAlignment="Center" BorderThickness="0" IsHitTestVisible="False"  >
+                    <my:HMIButton.Background>
+                        <ImageBrush Stretch="Uniform" ImageSource="Resources/icons8-exit-30.png"/>
+                    </my:HMIButton.Background>
+
+                </my:HMIButton>
+            </ToolBar>
+        </ToolBarTray>
+        <Grid Name="cvs3" Height="520" Width="165" Canvas.Left="0" Canvas.Top="90">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="55*"/>
+                <RowDefinition Height="391*"/>
+            </Grid.RowDefinitions>
+            <Rectangle Margin="0,3,0,0" RadiusX="10" RadiusY="10" Fill="#FF12BDCF" Grid.RowSpan="2">
+
+            </Rectangle>
+            <StackPanel Orientation="Vertical" Margin="10,3,10,0" Grid.RowSpan="2">
+
+                <my:HMIButton   Height="88"  FontSize="15"  Width="170" HorizontalAlignment="Left" BorderThickness="0" IsHitTestVisible="False" FontWeight="Bold" HorizontalContentAlignment="Left"  Focusable="False" IsTabStop="False" IsEnabled="False" Padding="0,0,0,2" >
+                    <StackPanel Orientation="Horizontal" Height="90" Width="170" Background="#FF12BDCF">
+                        <Image Source="ImageResources/microsoft.png" Width="36" Height="36" />
+                        <TextBlock Text="Start" Width="104" Height="32"  FontSize="24"  Background="#FF12BDCF" TextAlignment="Center" Foreground="Black" />
+                    </StackPanel>
+                </my:HMIButton>
+
+                <my:HMIButton   x:Name="btnRT2" Height="36"  FontSize="15" TagWindowText="WpfAppServer.RuntimeChart;" Width="170" HorizontalAlignment="Left" BorderThickness="0" Background="#FF12BDCF" IsHitTestVisible="True" FontWeight="Bold" HorizontalContentAlignment="Left" Padding="0,0,0,0" >
+                    <StackPanel Orientation="Horizontal" Height="36" Width="170" Background="#FF12BDCF">
+                        <Image Source="Resources/icons8-combo-chart-30.png" Width="29" Height="24" />
+                        <TextBlock Text="Trend Time" Width="116" Height="32"  FontSize="20"  Background="#FF12BDCF" TextAlignment="Left" Foreground="Black" />
+                    </StackPanel>
+                </my:HMIButton>
+
+                <my:HMIButton   x:Name="btnTrend2"   IsUnique="True" Height="36" FontWeight="Bold" FontSize="15" TagWriteText="" TagWindowText="WpfAppServer.Trend;" Width="170" HorizontalAlignment="Left" BorderThickness="0" Background="#FF12BDCF" HorizontalContentAlignment="Left">
+                    <StackPanel Orientation="Horizontal" Height="36" Width="170" Background="#FF12BDCF">
+                        <Image Source="Resources/icons8-line-chart-30.png" Width="29" Height="24" />
+                        <TextBlock Text="Trend Data" Width="120" Height="32"  FontSize="20"  Background="#FF12BDCF" TextAlignment="Left" Foreground="Black" />
+                    </StackPanel>
+                </my:HMIButton>
+
+                <my:HMIButton  x:Name="btnData2" IsUnique="False" Height="36" FontWeight="Bold" FontSize="15" TagWindowText="WpfAppServer.ReportArchive;" Width="170" HorizontalAlignment="Left" BorderThickness="0" Background="#FF12BDCF" HorizontalContentAlignment="Left">
+                    <StackPanel Orientation="Horizontal" Height="36" Width="170" Background="#FF12BDCF">
+                        <Image Source="Resources/icons8-pdf-30.png" Width="29" Height="24" />
+                        <TextBlock Text="Data Table" Width="115" Height="32"  FontSize="20"  Background="#FF12BDCF" TextAlignment="Left" Foreground="Black" />
+                    </StackPanel>
+                </my:HMIButton>
+
+                <my:HMIButton  x:Name="btnTag2"       IsUnique="True" Height="36" FontWeight="Bold" FontSize="15" TagWindowText="WpfAppServer.TagMonitor;" IsModel="True" Width="170" HorizontalAlignment="Left" BorderThickness="0" Background="#FF12BDCF" HorizontalContentAlignment="Left">
+                    <StackPanel Orientation="Horizontal" Height="36" Width="170" Background="#FF12BDCF">
+                        <Image Source="Resources/icons8-tag-64.png" Width="29" Height="24" />
+                        <TextBlock Text="Tag" Width="115" Height="32"  FontSize="20"  Background="#FF12BDCF" TextAlignment="Left" Foreground="Black" />
+                    </StackPanel>
+                </my:HMIButton>
+
+                <my:HMIButton  x:Name="btnAlarm2"      IsUnique="True" Height="35" FontWeight="Bold" FontSize="15" TagWindowText="WpfAppServer.AlarmSet;" IsPulse="True" Width="170" HorizontalAlignment="Left" BorderThickness="0" Background="#FF12BDCF" HorizontalContentAlignment="Left">
+                    <StackPanel Orientation="Horizontal" Height="36" Width="170" Background="#FF12BDCF">
+                        <Image Source="Resources/icons8-alarm-30.png" Width="29" Height="24" />
+                        <TextBlock Text="Alarm" Width="115" Height="32"  FontSize="20"  Background="#FF12BDCF" TextAlignment="Left" Foreground="Black" />
+                    </StackPanel>
+                </my:HMIButton>
+
+                <my:HMIButton   x:Name="btnSettings2"   TagWindowText="WpfAppServer.FAppServer.Settings;"   IsUnique="True" Height="35" FontWeight="Bold" FontSize="15"  IsPulse="True" Width="170" HorizontalAlignment="Left" BorderThickness="0" Background="#FF12BDCF" HorizontalContentAlignment="Left">
+                    <StackPanel Orientation="Horizontal" Height="36" Width="170" Background="#FF12BDCF">
+                        <Image Source="Resources/icons8-settings-50.png" Width="29" Height="24" />
+                        <TextBlock Text="Settings" Width="115" Height="32"  FontSize="20"  Background="#FF12BDCF" TextAlignment="Left" Foreground="Black" />
+                    </StackPanel>
+                </my:HMIButton>
+
+                <my:HMIButton  x:Name="btnHelp2"   TagWindowText="WpfAppServer.FAppServer.HelpAS;"   IsUnique="True" Height="35" FontWeight="Bold" FontSize="15"  IsPulse="True" Width="170" HorizontalAlignment="Left" BorderThickness="0" Background="#FF12BDCF" HorizontalContentAlignment="Left">
+                    <StackPanel Orientation="Horizontal" Height="36" Width="170" Background="#FF12BDCF">
+                        <Image Source="Resources/icons8-help-50.png" Width="29" Height="24" />
+                        <TextBlock Text="Help" Width="110" Height="32"  FontSize="20"  Background="#FF12BDCF" TextAlignment="Left" Foreground="Black" />
+                    </StackPanel>
+                </my:HMIButton>
+
+                <my:HMIButton  Background="#FFFDFDFD" x:Name="btnExit2" Height="66" FontSize="15"  Width="165" HorizontalAlignment="Left" BorderThickness="0" HorizontalContentAlignment="Left" FontWeight="Bold" Padding="0,0,0,2" >
+                    <StackPanel Orientation="Horizontal" Height="65" Width="165" Background="#FF12BDCF">
+                        <Image Source="Resources/icons8-exit-30.png" Width="40" Height="42" />
+                        <TextBlock Text="Exit" Width="58" Height="32"  FontSize="22"  Background="#FF12BDCF" TextAlignment="Left" Foreground="Black" />
+                    </StackPanel>
+
+                </my:HMIButton>
+
+                <StackPanel Grid.Column="1" HorizontalAlignment="Center" Orientation="Horizontal" Height="95" Width="160">
+                    <Image Source="ImageResources/150837039_135440608429122_5073399784826419136_n.jpg" Width="60" Height="50" Stretch="Fill">
+                        <Image.Clip>
+                            <EllipseGeometry RadiusX="25" RadiusY="25" Center="25,25"/>
+                        </Image.Clip>
+                    </Image>
+
+                    <StackPanel VerticalAlignment="Center" Margin="5 0 0 0">
+                        <TextBlock Text="Duy Le" FontSize="20" FontWeight="Bold" Width="89"/>
+                        <TextBlock Text="Admin" Foreground="White"/>
+                    </StackPanel>
+
+                </StackPanel>
+            </StackPanel>
+
+        </Grid>
+        <Grid  x:Name="toolBarTray" Height="114" Width="1190" Canvas.Left="335" Canvas.Top="1">
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="44*"/>
+                <ColumnDefinition Width="165*"/>
+                <ColumnDefinition Width="20*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.Resources>
+                <Style TargetType="my:HMIButton" BasedOn="{StaticResource ButtonGeneric}">
+                    <Setter Property="Height" Value="54"/>
+                    <Setter Property="Width" Value="50"/>
+                    <Setter Property="Background" Value="white"/>
+                    <Setter Property="Foreground" Value="white"/>
+                    <Setter Property="FontSize" Value="18"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="Margin" Value="2"/>
+                </Style>
+            </Grid.Resources>
+            <Rectangle Grid.ColumnSpan="3" Fill="#FF12BDCF" RadiusX="5" RadiusY="5" Margin="0,0,0,35"/>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Height="46" Width="194">
+                <Border CornerRadius="30" Width="35" Height="36" Background="#59E6B5"/>
+                <Border CornerRadius="30" Width="35" Height="34" Background="#FF7900" Margin="-5 0 0 0"/>
+                <TextBlock Text="SharpView" FontWeight="Bold" FontSize="22" VerticalAlignment="Center" Foreground="Black" Margin="10 0 0 0" Height="34" Width="118"/>
+            </StackPanel>
+            <TextBlock Text="We build your own SCADA" Margin="50,40,3,8" Foreground="White" FontSize="14"/>
+            <UniformGrid Columns="5" Grid.Column="1" >
+                <my:HMIButton  x:Name="btngrind1" TagWindowText="WpfAppServer.Pape4;" FontSize="20" Width="Auto" Background="White" Foreground="#FF171616" Margin="0,53,25,7" >
+                    <StackPanel Orientation="Horizontal" Width="128">
+                        <Border Width="30" Height="30" Background="#FFF5E6D2" CornerRadius="10">
+                            <Image Source="ImageResources/icons8-mixing-64.png" Margin="0,5,2,5"/>
+                        </Border>
+                        <TextBlock Text="Mixing Systems" Foreground="Black" Height="22" Width="101" FontSize="13"/>
+
+                    </StackPanel>
+
+                </my:HMIButton>
+                <my:HMIButton  x:Name="btngrind2" TagWindowText="WpfAppServer.Pape10;" FontSize="20" Width="Auto" Background="White" Foreground="#FF171616" Margin="-5,53,34,7" >
+                    <StackPanel Orientation="Horizontal" Width="125">
+                        <Border Width="30" Height="30" Background="#FFF5E6D2" CornerRadius="10">
+                            <Image Source="ImageResources/icons8-manufacturing-30.png" Margin="0,5,2,5"/>
+                        </Border>
+                        <TextBlock Text="Building3D" Foreground="Black" Height="21" Width="95" FontSize="13"/>
+
+                    </StackPanel>
+                </my:HMIButton>
+                <my:HMIButton  x:Name="btngrind2_Copy" TagWindowText="WpfAppServer.Pape8;" FontSize="20" Width="Auto" Background="White" Foreground="#FF171616" Margin="-20,53,52,7" >
+                    <StackPanel Orientation="Horizontal" Width="125">
+                        <Border Width="30" Height="30" Background="#FFF5E6D2" CornerRadius="10">
+                            <Image Source="ImageResources/icons8-steam-52 (1).png" Margin="0,5,2,5"/>
+                        </Border>
+                        <TextBlock Text="Steam Systems" Foreground="Black" Height="21" Width="95" FontSize="13"/>
+
+                    </StackPanel>
+                </my:HMIButton>
+                <my:HMIButton  x:Name="btngrind1_Copy" TagWindowText="WpfAppServer.Pape7;" FontSize="20" Width="Auto" Background="White" Foreground="#FF171616" Margin="-33,53,53,7" >
+                    <StackPanel Orientation="Horizontal" Width="125">
+                        <Border Width="30" Height="30" Background="#FFF5E6D2" CornerRadius="10">
+                            <Image Source="ImageResources/icons8-filter-64.png" Margin="0,5,2,5"/>
+                        </Border>
+                        <TextBlock Text="RO Systems" Foreground="Black" Height="21" Width="95" FontSize="13"/>
+
+                    </StackPanel>
+                </my:HMIButton>
+
+            </UniformGrid>
+            <StackPanel Orientation="Vertical" Grid.Column="1" Margin="696,0,0,39" HorizontalAlignment="Left" Width="119">
+                <TextBlock Text="Share Your Ideas" Foreground="White" Height="23" Width="116" FontSize="13" FontWeight="Bold"/>
+                <Border Width="26" Height="26" Background="#FFF5E6D2" CornerRadius="10" HorizontalAlignment="Left">
+                    <Image Source="Resources/icons8-mail-50.png" Margin="0,5,2,5"/>
+                </Border>
+                <Border Width="26" Height="26" Background="#FFF5E6D2" CornerRadius="10" HorizontalAlignment="Left">
+                    <Image Source="Resources/icons8-phone-50.png" Margin="0,5,2,5"/>
+                </Border>
+            </StackPanel>
+            <TextBlock Text="ansinh.ansinhautomation@gmail.com" Foreground="Black" FontSize="13" Margin="723,25,-20,72" Grid.Column="1" Grid.ColumnSpan="2" FontWeight="Bold"/>
+            <TextBlock Text="098 535 63 90" Foreground="Black" FontSize="13" Margin="723,52,-20,45" Grid.Column="1" Grid.ColumnSpan="2" FontWeight="Bold"/>
+
+        </Grid>
+        <Grid  x:Name="TaskBar1" Width="64" Height="246.5" Canvas.Left="1857.5" Canvas.Top="335.5">
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="63*"/>
+                <RowDefinition Height="184*"/>
+            </Grid.RowDefinitions>
+            <Grid.Resources>
+                <Style TargetType="my:HMIButton" BasedOn="{StaticResource ButtonGeneric}">
+                    <Setter Property="Height" Value="54"/>
+                    <Setter Property="Width" Value="50"/>
+                    <Setter Property="Background" Value="white"/>
+                    <Setter Property="Foreground" Value="white"/>
+                    <Setter Property="FontSize" Value="18"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="Margin" Value="2"/>
+                </Style>
+            </Grid.Resources>
+
+            <my:HMIButton  x:Name="btngrind12" TagWindowText="WpfAppServer.Pape4;" FontSize="20" Width="Auto" Background="Transparent" Foreground="#FF171616" Margin="0,5.379,0,8.38" Height="Auto" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" >
+                <Grid>
+
+                    <Border Width="58" Height="44" CornerRadius="10">
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF176B8E" Offset="0.426"/>
+                                <GradientStop Color="#FFC8C8C8" Offset="1"/>
+                                <GradientStop Color="#FF2D96C3" Offset="0.498"/>
+                                <GradientStop Color="#FF91DC70" Offset="0.301"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Rectangle Stroke="Black" StrokeThickness="5" RadiusX="1" RadiusY="1" Margin="10,6,33,24"/>
+
+
+                    </Border>
+                    <Rectangle Stroke="Black" StrokeThickness="5" RadiusX="1" RadiusY="1" Margin="10,25,33,5"/>
+                    <Rectangle Stroke="Black" StrokeThickness="5" RadiusX="0.25" RadiusY="0.25" Margin="31,6,12,24"/>
+
+                    <Rectangle Stroke="Black" StrokeThickness="5" RadiusX="0.5" RadiusY="0.5" Margin="31,26,12,5"/>
+
+                </Grid>
+            </my:HMIButton>
+            <StackPanel Grid.Row="1" Orientation="Vertical" d:LayoutOverrides="LeftMargin, RightMargin">
+                <my:HMIButton Margin="7,2">
+
+                    <Border Width="30" Height="30" Background="#FFF5E6D2" CornerRadius="10">
+                        <Image Source="ImageResources/icons8-mixing-64.png" Margin="0,5,2,5"/>
+                    </Border>
+
+                </my:HMIButton>
+                <my:HMIButton>
+                    <Border Width="30" Height="30" Background="#FFF5E6D2" CornerRadius="10">
+                        <Image Source="ImageResources/icons8-mixing-64.png" Margin="0,5,2,5"/>
+                    </Border>
+                </my:HMIButton>
+                <my:HMIButton>
+                    <Border Width="30" Height="30" Background="#FFF5E6D2" CornerRadius="10">
+                        <Image Source="Resources/icons8-help-50.png" Margin="0,5,2,5"/>
+                    </Border>
+                </my:HMIButton>
+            </StackPanel>
+        </Grid>-->
+
+    </Canvas>
+</UserControl>

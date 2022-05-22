@@ -1,0 +1,100 @@
+﻿<Window x:Class="WpfAppServer.AlarmSet"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:wk="clr-namespace:Microsoft.Windows.Controls;assembly=WPFToolkit.Extended"
+    xmlns:local="clr-namespace:WpfAppServer" Title="Alarm record"  
+     
+    TextOptions.TextFormattingMode="Display" FontFamily="SimSun" Loaded="Window_Loaded" Closed="Window_Closed">
+    <Window.Resources>
+        <local:AlarmConverter x:Key="AlarmConverter"/>
+        <ContextMenu x:Key="sampleContextMenu" >
+            <MenuItem Header="Delete" Command="{x:Static local:MyCommands.Delete}"/>
+            <MenuItem Header="Process" >
+                <MenuItem Header="Reply" Command="{x:Static local:MyCommands.Commit}" CommandParameter="0"/>
+                <MenuItem Header="Reply all" Command="{x:Static local:MyCommands.Commit}" CommandParameter="1"/>
+                <MenuItem Header="Ignore" Command="{x:Static local:MyCommands.Commit}" CommandParameter="2"/>
+                <MenuItem Header="Ignore all" Command="{x:Static local:MyCommands.Commit}" CommandParameter="3"/>
+            </MenuItem>
+            <Separator />
+        </ContextMenu>
+    </Window.Resources>
+    <TabControl Name="tab1"  Width="Auto">
+        <TabItem Header="Activated alarm" Foreground="Black">
+            <DataGrid Name="list0" IsReadOnly="True"  AutoGenerateColumns="False" ContextMenu="{StaticResource sampleContextMenu}">
+                <DataGrid.RowStyle>
+                    <Style TargetType="DataGridRow">
+                        <Setter Property="Background" Value="{Binding Path=Severity,Converter={StaticResource AlarmConverter}}" />
+                    </Style>
+                </DataGrid.RowStyle>
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        <Setter Property="VerticalContentAlignment" Value="Center"/>
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="100" Header="Date" Binding="{Binding Path=LastActive, StringFormat='d'}"/>
+                    <DataGridTextColumn Width="100" Header="Time" Binding="{Binding Path=LastActive, StringFormat='t'}"/>
+                    <DataGridTextColumn Width="150" Header="description" Binding="{Binding Path=Comment}"/>
+                    <DataGridTextColumn Width="250" Header="Message" Binding="{Binding Path=Message}"/>
+                    <DataGridTextColumn Width="80" Header="Value" Binding="{Binding Path=Value}"/>
+                    <DataGridTextColumn Width="100" Header="Level" Binding="{Binding Path=Severity}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </TabItem>
+        <TabItem Header="Alarm log" Foreground="Black">
+            <ListView Name="list2" FontSize="12">
+                <ListView.View>
+                    <GridView AllowsColumnReorder="true">
+                        <GridViewColumn  Width="160" Header="Time" DisplayMemberBinding="{Binding StartTime}"/>
+                        <GridViewColumn  Width="300" Header="Message" DisplayMemberBinding="{Binding AlarmText}" />
+                        <GridViewColumn  Width="60" Header="Alarm value" DisplayMemberBinding="{Binding AlarmValue}" />
+                        <GridViewColumn  Width="60" Header="Types" DisplayMemberBinding="{Binding SubAlarmType}" />
+                        <GridViewColumn  Width="100" Header="Level" DisplayMemberBinding="{Binding Severity}"/>
+                        <GridViewColumn  Width="100" Header="Continued" DisplayMemberBinding="{Binding Duration}"/>
+                        <GridViewColumn  Width="100" Header="Source" DisplayMemberBinding="{Binding Source}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </TabItem>
+        <TabItem Header="Alarm record query" Foreground="Black">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="32"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <ToolBar  Name="toolBar1" ItemsSource="{Binding}" ItemTemplate="{StaticResource DeleteButton}">
+                    <Button ContentTemplate="{StaticResource ResetButton}" ToolTip="Clear the alarm log" Style="{StaticResource ButtonGeneric}" Command="{x:Static local:MyCommands.Clear}"/>
+                    <Button ContentTemplate="{StaticResource EditButton}" ToolTip="Save and empty" Style="{StaticResource ButtonGeneric}" Command="{x:Static local:MyCommands.Edit}"/>
+                    <Separator/>
+                    <TextBlock Text=" Start date：" Margin="6"/>
+                    <wk:DateTimePicker Name="dtstart" />
+                    <TextBlock Text=" End date：" Margin="6"/>
+                    <wk:DateTimePicker Name="dtend" />
+                    <Button Margin="10,0,0,0"  ContentTemplate="{StaticResource SearchButton}" ToolTip="Query alarm history" Style="{StaticResource ButtonGeneric}" Command="{x:Static local:MyCommands.Query}"/>
+                    <Separator/>
+                    <wk:ColorPicker Name="colorpicker" Margin="10,0,0,0" Width="100"  SelectedColorChanged="ColorPicker_SelectedColorChanged"/>
+                </ToolBar>
+                <ListView Name="list1" FontSize="12" Grid.Row="1">
+                    <ListView.View>
+                        <GridView AllowsColumnReorder="true">
+                            <GridViewColumn  Width="160" Header="time" DisplayMemberBinding="{Binding StartTime}"/>
+                            <GridViewColumn  Width="300" Header="Message" DisplayMemberBinding="{Binding AlarmText}" />
+                            <GridViewColumn  Width="60" Header="Alarm value" DisplayMemberBinding="{Binding AlarmValue}" />
+                            <GridViewColumn  Width="60" Header="Types" DisplayMemberBinding="{Binding SubAlarmType}" />
+                            <GridViewColumn  Width="100" Header="Level" DisplayMemberBinding="{Binding Severity}"/>
+                            <GridViewColumn  Width="100" Header="Continued" DisplayMemberBinding="{Binding Duration}"/>
+                            <GridViewColumn  Width="100" Header="Source" DisplayMemberBinding="{Binding Source}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+        </TabItem>
+
+        <TabItem Header="Background event" Foreground="Black">
+            <ListBox Name="list3" Background="Azure" FontSize="13" VirtualizingStackPanel.IsVirtualizing="True" VirtualizingStackPanel.VirtualizationMode="Recycling">
+            </ListBox>
+        </TabItem>
+    </TabControl>
+</Window>
+        

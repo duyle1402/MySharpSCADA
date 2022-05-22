@@ -1,0 +1,634 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{31CE7714-DDF1-4FB2-A479-9818B1B8D9B2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WpfAppServer</RootNamespace>
+    <AssemblyName>WpfAppServer</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Volume.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="3DTools">
+      <HintPath>D:\C#\Code WPF\helix-toolkit-develop\Source\Examples\WPF\ExampleBrowser\bin\Debug\3DTools.dll</HintPath>
+    </Reference>
+    <Reference Include="ClientDriver">
+      <HintPath>DriverServer\ClientDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="DataHelper">
+      <HintPath>DriverServer\DataHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="DataService">
+      <HintPath>DriverServer\DataService.dll</HintPath>
+    </Reference>
+    <Reference Include="DynamicDataDisplay">
+      <HintPath>DriverServer\DynamicDataDisplay.dll</HintPath>
+    </Reference>
+    <Reference Include="HelixToolkit">
+      <HintPath>D:\C#\Code WPF\helix-toolkit-develop\Source\Examples\WPF\ExampleBrowser\bin\Debug\HelixToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="HelixToolkit.Wpf">
+      <HintPath>D:\C#\Code WPF\helix-toolkit-develop\Source\Examples\WPF\ExampleBrowser\bin\Debug\HelixToolkit.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="HelixToolkit.Wpf.Input">
+      <HintPath>D:\C#\Code WPF\helix-toolkit-develop\Source\Examples\WPF\ExampleBrowser\bin\Debug\HelixToolkit.Wpf.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="HMIControl">
+      <HintPath>DriverServer\HMIControl.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>DriverServer\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Expression.Controls">
+      <HintPath>DriverServer\Microsoft.Expression.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Drawing">
+      <HintPath>DriverServer\Microsoft.Expression.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions">
+      <HintPath>DriverServer\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="PropertyTools">
+      <HintPath>D:\C#\Code WPF\helix-toolkit-develop\Source\Examples\WPF\ExampleBrowser\bin\Debug\PropertyTools.dll</HintPath>
+    </Reference>
+    <Reference Include="PropertyTools.Wpf">
+      <HintPath>D:\C#\Code WPF\helix-toolkit-develop\Source\Examples\WPF\ExampleBrowser\bin\Debug\PropertyTools.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Controls.DataVisualization.Toolkit">
+      <HintPath>DriverServer\System.Windows.Controls.DataVisualization.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity">
+      <HintPath>DriverServer\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WPFToolkit.Extended">
+      <HintPath>DriverServer\WPFToolkit.Extended.dll</HintPath>
+    </Reference>
+    <Reference Include="ZedGraph">
+      <HintPath>DriverServer\ZedGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AS_View\ASCompany.xaml.cs">
+      <DependentUpon>ASCompany.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AS_View\ASPurchase.xaml.cs">
+      <DependentUpon>ASPurchase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BuildingDemo\BoundsConverter.cs" />
+    <Compile Include="BuildingDemo\ChimneyVisual3D.cs" />
+    <Compile Include="BuildingDemo\FenceVisual3D.cs" />
+    <Compile Include="BuildingDemo\HouseVisual3D.cs" />
+    <Compile Include="BuildingDemo\KerbVisual3D.cs" />
+    <Compile Include="BuildingDemo\SiloVisual3D.cs" />
+    <Compile Include="BuildingDemo\Superellipse.cs" />
+    <Compile Include="BuildingDemo\ViewModel.cs" />
+    <Compile Include="BuildingDemo\Window1.xaml.cs" />
+    <Compile Include="FAppServer\AlarmSet.xaml.cs">
+      <DependentUpon>AlarmSet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CAppServer\ClientService.cs" />
+    <Compile Include="CAppServer\ConfigCache.cs" />
+    <Compile Include="FAppServer\HelpAS.xaml.cs">
+      <DependentUpon>HelpAS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FAppServer\ReportArchive.xaml.cs">
+      <DependentUpon>ReportArchive.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FAppServer\Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Page01.xaml.cs">
+      <DependentUpon>Page01.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CAppServer\MemberPrincipal.cs" />
+    <Compile Include="CAppServer\MyCollection.cs" />
+    <Compile Include="CAppServer\MyCommand.cs" />
+    <Compile Include="CAppServer\MyConvert.cs" />
+    <Compile Include="Page11.xaml.cs">
+      <DependentUpon>Page11.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pape10.xaml.cs">
+      <DependentUpon>Pape10.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pape03.xaml.cs">
+      <DependentUpon>Pape03.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FAppServer\RuntimeChart.xaml.cs">
+      <DependentUpon>RuntimeChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pape02.xaml.cs">
+      <DependentUpon>Pape02.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FAppServer\StartDevice.xaml.cs">
+      <DependentUpon>StartDevice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CAppServer\SystemLog.cs" />
+    <Compile Include="FAppServer\TagMonitor.xaml.cs">
+      <DependentUpon>TagMonitor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FAppServer\Trend.xaml.cs">
+      <DependentUpon>Trend.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CAppServer\WindowHelper.cs" />
+    <Page Include="AS_View\ASCompany.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AS_View\ASPurchase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BuildingDemo\Window1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FAppServer\AlarmSet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FAppServer\HelpAS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FAppServer\ReportArchive.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FAppServer\Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page01.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Page11.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pape10.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pape03.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FAppServer\RuntimeChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pape02.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FAppServer\StartDevice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FAppServer\TagMonitor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FAppServer\Trend.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pape04.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pape05.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pape06.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pape07.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pape08.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pape09.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Pape04.xaml.cs">
+      <DependentUpon>Pape04.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pape05.xaml.cs">
+      <DependentUpon>Pape05.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pape06.xaml.cs">
+      <DependentUpon>Pape06.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pape07.xaml.cs">
+      <DependentUpon>Pape07.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pape08.xaml.cs">
+      <DependentUpon>Pape08.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pape09.xaml.cs">
+      <DependentUpon>Pape09.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <Resource Include="Fonts\iconfont.ttf" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\ReporterScale.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Copy.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Cross.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Cut.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Database-Add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Design.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Help.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Key.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Login_Server.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mm-Eject.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mm-Fast Forward.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mm-First.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mm-Last.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mm-Pause.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mm-Play.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mm-Rewind.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mm-Stop.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Permission.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Plus.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Redo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Save.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Script.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Search.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Select All.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Tools.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Tree View.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Unlock.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Warning.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Volume.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageResources\Calender.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageResources\TANK 0109.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageResources\may nen_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageResources\tram can 01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageResources\nha xuong 01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageResources\11113.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageResources\11112.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageResources\DF30-FBC-TUBE-2-AND-3-LAYERS-COMPARISON-2016.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageResources\dsds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WpfHMIControl\WpfHMIControl.csproj">
+      <Project>{fb190e48-e6bb-4eca-a19e-12ecc77a2749}</Project>
+      <Name>WpfHMIControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\C#\Code WPF\TuHoc\HMI_WPF_Control1\HMI_Control\HMI_Control.csproj">
+      <Project>{27d49e00-74d0-4289-a620-dbe9d0acb16e}</Project>
+      <Name>HMI_Control</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons8-change-user-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons8-key-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons8-login-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons8-connect-develop-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons8-user-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons8-key-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons8-key.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons8-key-26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons8-copyright-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageResources\scada.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons8-eye.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons8-eye-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageResources\icons8-login-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\-.png" />
+    <Resource Include="Resources\x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons8-windows-10-30 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageResources\icons8-windows-10-30 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons8-combo-chart-30.png" />
+    <Resource Include="Resources\icons8-exit-30.png" />
+    <Resource Include="Resources\icons8-line-chart-30.png" />
+    <Resource Include="Resources\icons8-tag-64.png" />
+    <Resource Include="Resources\icons8-windows-10-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons8-alarm-30.png" />
+    <Resource Include="Resources\icons8-pdf-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons8-help-50.png" />
+    <Resource Include="Resources\icons8-menu-30.png" />
+    <Resource Include="Resources\icons8-settings-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons8-menu-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons8-facebook-24 %281%29.png" />
+    <Resource Include="Resources\icons8-mail-50.png" />
+    <Resource Include="Resources\icons8-navigation-48.png" />
+    <Resource Include="Resources\icons8-phone-50.png" />
+    <Resource Include="Resources\icons8-www-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageResources\microsoft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="BuildingDemo\fence.png" />
+    <Resource Include="BuildingDemo\smoke.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="microsoft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageResources\150837039_135440608429122_5073399784826419136_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageResources\icons8-manufacturing-30.png" />
+    <Resource Include="ImageResources\icons8-mixing-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageResources\icons8-co2-100.png" />
+    <Resource Include="ImageResources\icons8-filter-64.png" />
+    <Resource Include="ImageResources\icons8-steam-52 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AS_View\ImageResources\ASlogo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageResources\icons8-check-list-60.png" />
+    <Resource Include="ImageResources\icons8-list-50.png" />
+    <Resource Include="ImageResources\icons8-purchase-58.png" />
+    <Resource Include="ImageResources\icons8-software-64.png" />
+    <Resource Include="ImageResources\icons8-technology-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AS_View\ImageResources\a1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AS_View\ImageResources\local.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AS_View\ImageResources\mas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AS_View\ImageResources\logo-masan.jpg" />
+    <Resource Include="AS_View\ImageResources\unnamed.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>; Move all assemblies and related files to DriverLibrary folder
+ROBOCOPY "$(TargetDir) " "$(TargetDir)DriverLibrary\ " /XF *.exe *.config *.manifest *.pdb *.xml /XD DriverLibrary logs data /E /IS /MOVE
+if %25errorlevel%25 leq 4 exit 0 else exit %25errorlevel%25</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\packages\System.Runtime.WindowsRuntime.4.7.0\build\net451\System.Runtime.WindowsRuntime.targets" Condition="Exists('..\packages\System.Runtime.WindowsRuntime.4.7.0\build\net451\System.Runtime.WindowsRuntime.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Runtime.WindowsRuntime.4.7.0\build\net451\System.Runtime.WindowsRuntime.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Runtime.WindowsRuntime.4.7.0\build\net451\System.Runtime.WindowsRuntime.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

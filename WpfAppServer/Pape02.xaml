@@ -1,0 +1,500 @@
+﻿<UserControl x:Class="WpfAppServer.Pape2"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:my="clr-namespace:HMIControl;assembly=HMIControl" 
+             mc:Ignorable="d" Name="Pape21" Width="1920" Height="1080" d:DesignHeight="1072" d:DesignWidth="1912" Background="#FFC3F3F0"
+             Loaded="HMI_Loaded" Unloaded="HMI_Unloaded">
+    <Canvas x:Name="cvs1" Margin="2,-2,-2,2" >
+        <my:LinkLine OriginInfo="{Binding BottomPin, ElementName=DHD1}" TargetInfo="{Binding TopPin, ElementName=DHD2}"/>
+        <my:TubeLine Canvas.Left="571" Canvas.Top="321" Width="378" Height="5"/>
+        <my:DHD_Small Canvas.Left="426" Canvas.Top="361" Height="112" Width="112"/>
+        <my:CB_CutOnOff x:Name="d2_Copy8" Height="41" Canvas.Left="544" Canvas.Top="388" Width="34" TagReadText="RUN:if(V&lt;200)\"/>
+        <my:TubeLine Canvas.Left="694" Canvas.Top="253" Width="130" Height="5" RenderTransformOrigin="0.5,0.5">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.866"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <my:TubeLine Canvas.Left="542" Canvas.Top="355" Width="64" Height="5" RenderTransformOrigin="0.5,0.5">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.866"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <my:TubeLine Canvas.Left="509" Canvas.Top="491" Width="130" Height="5" RenderTransformOrigin="0.5,0.5">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.866"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <my:DHD_Small Canvas.Left="609" Canvas.Top="361" Height="112" Width="112"/>
+        <my:CB_CutOnOff x:Name="d2_Copy" Height="41" Canvas.Left="729" Canvas.Top="388" Width="34" TagReadText="RUN:if(V&lt;200)\"/>
+        <my:TubeLine Canvas.Left="727" Canvas.Top="355" Width="64" Height="5" RenderTransformOrigin="0.5,0.5">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.866"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <my:TubeLine Canvas.Left="644" Canvas.Top="540" Width="229" Height="5" RenderTransformOrigin="0.5,0.5">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.866"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <my:DHD_Small Canvas.Left="796" Canvas.Top="361" Height="112" Width="112"/>
+        <my:CB_CutOnOff x:Name="d2_Copy1" Height="41" Canvas.Left="916" Canvas.Top="388" Width="34" TagReadText="RUN:if(V&lt;200)\"/>
+        <my:TubeLine Canvas.Left="914" Canvas.Top="355" Width="64" Height="5" RenderTransformOrigin="0.5,0.5">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.866"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <my:TubeLine Canvas.Left="881" Canvas.Top="491" Width="130" Height="5" RenderTransformOrigin="0.5,0.5">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.866"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <my:TubeLine Canvas.Left="641" Canvas.Top="656" Width="225" Height="5"/>
+        <my:TubeLine Canvas.Left="831" Canvas.Top="690" Width="64" Height="5" RenderTransformOrigin="0.5,0.5">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.866"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <my:TubeLine Canvas.Left="612" Canvas.Top="690" Width="64" Height="5" RenderTransformOrigin="0.5,0.5">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.866"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <my:CB_CutOnOff x:Name="d2_Copy2" Height="41" Canvas.Left="614" Canvas.Top="723" Width="34" TagReadText="RUN:if(V&lt;200)\"/>
+        <my:CB_CutOnOff x:Name="d2_Copy3" Height="41" Canvas.Left="833" Canvas.Top="723" Width="34" TagReadText="RUN:if(V&lt;200)\"/>
+        <my:TubeLine Canvas.Left="584" Canvas.Top="820" Width="120" Height="5" RenderTransformOrigin="0.5,0.5">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.866"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <my:TubeLine Canvas.Left="803" Canvas.Top="820" Width="120" Height="5" RenderTransformOrigin="0.5,0.5">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.866"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <my:DHD_Small Canvas.Left="494" Canvas.Top="695" Height="112" Width="112"/>
+        <my:DHD_Small Canvas.Left="882" Canvas.Top="694" Height="112" Width="112"/>
+        <my:TubeLine Canvas.Left="161" Canvas.Top="321" Width="192" Height="5"/>
+        <my:DHD_Small Canvas.Left="16" Canvas.Top="361" Height="112" Width="112"/>
+        <my:CB_CutOnOff x:Name="d2_Copy4" Height="41" Canvas.Left="134" Canvas.Top="388" Width="34" TagReadText="RUN:if(V&lt;200)\"/>
+        <my:TubeLine Canvas.Left="190" Canvas.Top="254" Width="130" Height="5" RenderTransformOrigin="0.5,0.5">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.866"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <my:TubeLine Canvas.Left="132" Canvas.Top="355" Width="64" Height="5" RenderTransformOrigin="0.5,0.5">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.866"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <my:TubeLine Canvas.Left="99" Canvas.Top="491" Width="130" Height="5" RenderTransformOrigin="0.5,0.5">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.866"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <my:DHD_Small Canvas.Left="199" Canvas.Top="361" Height="112" Width="112"/>
+        <my:CB_CutOnOff x:Name="d2_Copy5" Height="41" Canvas.Left="319" Canvas.Top="388" Width="34" TagReadText="RUN:if(V&lt;200)\"/>
+        <my:TubeLine Canvas.Left="317" Canvas.Top="355" Width="64" Height="5" RenderTransformOrigin="0.5,0.5">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.866"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <my:TubeLine Canvas.Left="284" Canvas.Top="491" Width="130" Height="5" RenderTransformOrigin="0.5,0.5">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.866"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <my:DHD_Small Canvas.Left="1017" Canvas.Top="361" Height="112" Width="112"/>
+        <my:CB_CutOnOff x:Name="d2_Copy6" Height="41" Canvas.Left="1135" Canvas.Top="388" Width="34" TagReadText="RUN:if(V&lt;200)\"/>
+        <my:TubeLine Canvas.Left="1133" Canvas.Top="355" Width="64" Height="5" RenderTransformOrigin="0.5,0.5">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.866"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <my:TubeLine Canvas.Left="1100" Canvas.Top="491" Width="130" Height="5" RenderTransformOrigin="0.5,0.5">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.866"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <my:DHD_Small Canvas.Left="1195" Canvas.Top="361" Height="112" Width="112"/>
+        <my:CB_CutOnOff x:Name="d2_Copy7" Height="41" Canvas.Left="1312" Canvas.Top="387" Width="34" TagReadText="RUN:if(V&lt;200)\"/>
+        <my:TubeLine Canvas.Left="1310" Canvas.Top="354" Width="64" Height="5" RenderTransformOrigin="0.5,0.5">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.866"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <my:TubeLine Canvas.Left="1277" Canvas.Top="490" Width="130" Height="5" RenderTransformOrigin="0.5,0.5">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.866"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <my:DHD_Small Canvas.Left="1373" Canvas.Top="361" Height="112" Width="112"/>
+        <my:CB_CutOnOff x:Name="d2_Copy9" Height="41" Canvas.Left="1490" Canvas.Top="387" Width="34" TagReadText="RUN:if(V&lt;200)\"/>
+        <my:TubeLine Canvas.Left="1488" Canvas.Top="354" Width="64" Height="5" RenderTransformOrigin="0.5,0.5">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.866"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <my:TubeLine Canvas.Left="1371" Canvas.Top="574" Width="298" Height="5" RenderTransformOrigin="0.5,0.5">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.866"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <my:DHD_Small Canvas.Left="1561" Canvas.Top="361" Height="112" Width="112"/>
+        <my:CB_CutOnOff x:Name="d2_Copy10" Height="41" Canvas.Left="1678" Canvas.Top="388" Width="34" TagReadText="RUN:if(V&lt;200)\"/>
+        <my:TubeLine Canvas.Left="1676" Canvas.Top="355" Width="64" Height="5" RenderTransformOrigin="0.5,0.5">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.866"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <my:TubeLine Canvas.Left="1643" Canvas.Top="491" Width="130" Height="5" RenderTransformOrigin="0.5,0.5">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.866"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <my:DHD_Small Canvas.Left="1749" Canvas.Top="361" Height="112" Width="112"/>
+        <my:CB_CutOnOff x:Name="d2_Copy11" Height="41" Canvas.Left="1865" Canvas.Top="388" Width="34" TagReadText="RUN:if(V&lt;200)\"/>
+        <my:TubeLine Canvas.Left="1863" Canvas.Top="355" Width="64" Height="5" RenderTransformOrigin="0.5,0.5">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.866"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <my:TubeLine Canvas.Left="1830" Canvas.Top="491" Width="130" Height="5" RenderTransformOrigin="0.5,0.5">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.866"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <my:TubeLine Canvas.Left="1163" Canvas.Top="321" Width="736" Height="5"/>
+        <my:TubeLine Canvas.Left="694" Canvas.Top="253" Width="130" Height="5" RenderTransformOrigin="0.5,0.5">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.866"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <Label Content="" Canvas.Left="744" Canvas.Top="137" FontSize="20" Background="#00000000"/>
+        <my:TubeLine Canvas.Left="1456" Canvas.Top="254" Width="130" Height="5" RenderTransformOrigin="0.5,0.5">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.866"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <my:TubeLine Canvas.Left="1456" Canvas.Top="254" Width="130" Height="5" RenderTransformOrigin="0.5,0.5">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.866"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <Label Content="MDB-F2" Canvas.Left="1481" Canvas.Top="138" FontSize="20" Background="#00000000"/>
+        <my:CB_CutOnOff x:Name="d2_Copy12" Height="41" Canvas.Left="1490" Canvas.Top="724" Width="34" TagReadText="RUN:if(V&lt;200)\"/>
+        <my:DHD_Small Canvas.Left="1373" Canvas.Top="694" Height="112" Width="112"/>
+        <my:TubeLine Canvas.Left="1460" Canvas.Top="821" Width="120" Height="5" RenderTransformOrigin="0.5,0.5">
+            <my:TubeLine.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.866"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </my:TubeLine.RenderTransform>
+        </my:TubeLine>
+        <Label Content="MDB - WT" Canvas.Left="206" Canvas.Top="137" FontSize="20" Background="#00000000"/>
+        <Label Content="MDB - WT" Canvas.Left="711" Canvas.Top="137" FontSize="20" Background="#00000000"/>
+        <Label Content="LP-F2.2" Canvas.Left="1303" Canvas.Top="583" FontSize="20" Background="#00000000"/>
+        <Label Content="MDB-WWT" Canvas.Left="1407" Canvas.Top="583" FontSize="20" Background="#00000000"/>
+        <Label Content="CSP-02" Canvas.Left="1662" Canvas.Top="583" FontSize="20" Background="#00000000"/>
+        <Label Content="CSP-03" Canvas.Left="1838" Canvas.Top="583" FontSize="20" Background="#00000000"/>
+        <Label Content="DB-DK1" Canvas.Left="1129" Canvas.Top="583" FontSize="20" Background="#00000000"/>
+        <Label Content="LB-NR" Canvas.Left="1485" Canvas.Top="909" FontSize="20" Background="#00000000"/>
+        <Label Content="LP-UT" Canvas.Left="913" Canvas.Top="583" FontSize="20" Background="#00000000"/>
+        <Label Content="MDB-LR" Canvas.Left="670" Canvas.Top="583" FontSize="20" Background="#00000000"/>
+        <Label Content="LP-GH3 LIGHTING" Canvas.Left="777" Canvas.Top="909" FontSize="20" Background="#00000000"/>
+        <Label Content="LP-TC" Canvas.Left="613" Canvas.Top="909" FontSize="20" Background="#00000000"/>
+        <Label Content="DB-DK2" Canvas.Left="528" Canvas.Top="583" FontSize="20" Background="#00000000"/>
+        <Label Content="DB-HC" Canvas.Left="119" Canvas.Top="583" FontSize="20" Background="#00000000"/>
+        <Label Content="LP-WT" Canvas.Left="310" Canvas.Top="583" FontSize="20" Background="#00000000"/>
+        <Label Content="WATER TREATMENT" Canvas.Left="259" Canvas.Top="620" FontSize="20" Background="#00000000"/>
+        <my:HVValueIndicator Height="16" Canvas.Left="60" Canvas.Top="560" Width="27" RenderTransformOrigin="0.5,0.5">
+            <my:HVValueIndicator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform X="90"/>
+                </TransformGroup>
+            </my:HVValueIndicator.RenderTransform>
+        </my:HVValueIndicator>
+        <my:HVValueIndicator Height="16" Canvas.Left="245" Canvas.Top="563" Width="28" RenderTransformOrigin="0.5,0.5">
+            <my:HVValueIndicator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform X="90"/>
+                </TransformGroup>
+            </my:HVValueIndicator.RenderTransform>
+        </my:HVValueIndicator>
+        <my:HVValueIndicator Height="16" Canvas.Left="152" Canvas.Top="172" Width="27" RenderTransformOrigin="0.5,0.5">
+            <my:HVValueIndicator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform X="90"/>
+                </TransformGroup>
+            </my:HVValueIndicator.RenderTransform>
+        </my:HVValueIndicator>
+        <my:HVValueIndicator Height="16" Canvas.Left="656" Canvas.Top="171" Width="27" RenderTransformOrigin="0.5,0.5">
+            <my:HVValueIndicator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform X="90"/>
+                </TransformGroup>
+            </my:HVValueIndicator.RenderTransform>
+        </my:HVValueIndicator>
+        <my:HVValueIndicator Height="16" Canvas.Left="470" Canvas.Top="561" Width="28" RenderTransformOrigin="0.5,0.5">
+            <my:HVValueIndicator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform X="90"/>
+                </TransformGroup>
+            </my:HVValueIndicator.RenderTransform>
+        </my:HVValueIndicator>
+        <my:HVValueIndicator Height="16" Canvas.Left="842" Canvas.Top="563" Width="28" RenderTransformOrigin="0.5,0.5">
+            <my:HVValueIndicator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform X="90"/>
+                </TransformGroup>
+            </my:HVValueIndicator.RenderTransform>
+        </my:HVValueIndicator>
+        <my:HVValueIndicator Height="16" Canvas.Left="1061" Canvas.Top="563" Width="28" RenderTransformOrigin="0.5,0.5">
+            <my:HVValueIndicator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform X="90"/>
+                </TransformGroup>
+            </my:HVValueIndicator.RenderTransform>
+        </my:HVValueIndicator>
+        <my:HVValueIndicator Height="16" Canvas.Left="1238" Canvas.Top="559" Width="28" RenderTransformOrigin="0.5,0.5">
+            <my:HVValueIndicator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform X="90"/>
+                </TransformGroup>
+            </my:HVValueIndicator.RenderTransform>
+        </my:HVValueIndicator>
+        <my:HVValueIndicator Height="16" Canvas.Left="1604" Canvas.Top="562" Width="28" RenderTransformOrigin="0.5,0.5">
+            <my:HVValueIndicator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform X="90"/>
+                </TransformGroup>
+            </my:HVValueIndicator.RenderTransform>
+        </my:HVValueIndicator>
+        <my:HVValueIndicator Height="16" Canvas.Left="1791" Canvas.Top="560" Width="28" RenderTransformOrigin="0.5,0.5">
+            <my:HVValueIndicator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform X="90"/>
+                </TransformGroup>
+            </my:HVValueIndicator.RenderTransform>
+        </my:HVValueIndicator>
+        <my:HVValueIndicator Height="16" Canvas.Left="1416" Canvas.Top="889" Width="28" RenderTransformOrigin="0.5,0.5">
+            <my:HVValueIndicator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform X="90"/>
+                </TransformGroup>
+            </my:HVValueIndicator.RenderTransform>
+        </my:HVValueIndicator>
+        <my:HVValueIndicator Height="16" Canvas.Left="759" Canvas.Top="887" Width="28" RenderTransformOrigin="0.5,0.5">
+            <my:HVValueIndicator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform X="90"/>
+                </TransformGroup>
+            </my:HVValueIndicator.RenderTransform>
+        </my:HVValueIndicator>
+        <my:HVValueIndicator Height="16" Canvas.Left="540" Canvas.Top="887" Width="28" RenderTransformOrigin="0.5,0.5">
+            <my:HVValueIndicator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform X="90"/>
+                </TransformGroup>
+            </my:HVValueIndicator.RenderTransform>
+        </my:HVValueIndicator>
+        <my:HVValueIndicator Height="16" Canvas.Left="1418" Canvas.Top="173" Width="27" RenderTransformOrigin="0.5,0.5">
+            <my:HVValueIndicator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform X="90"/>
+                </TransformGroup>
+            </my:HVValueIndicator.RenderTransform>
+        </my:HVValueIndicator>
+    </Canvas>
+</UserControl>

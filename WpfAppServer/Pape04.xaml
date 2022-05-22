@@ -1,0 +1,507 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:my="clr-namespace:HMIControl;assembly=HMIControl" 
+             xmlns:HMI_Control="clr-namespace:HMI_Control;assembly=HMI_Control" xmlns:WpfHMIControl="clr-namespace:WpfHMIControl;assembly=WpfHMIControl" xmlns:ec="http://schemas.microsoft.com/expression/2010/controls" xmlns:extToolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended" xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0" x:Class="WpfAppServer.Pape4" 
+             mc:Ignorable="d" x:Name="Pape31" Width="1920" Height="1080" d:DesignHeight="1072" d:DesignWidth="1912" Background="#FFC3F3F0"
+             Loaded="HMI_Loaded" Unloaded="HMI_Unloaded">
+
+    <Canvas x:Name="cvs1" Margin="1,1,-1,-1" >
+
+        <my:LinkLine OriginInfo="{Binding BottomPin, ElementName=DHD1}" TargetInfo="{Binding TopPin, ElementName=DHD2}"/>
+        <my:LinkLine Height="100" Canvas.Left="500" Canvas.Top="560" Width="100"/>
+
+        <HMI_Control:HMIShortPipe Canvas.Left="21" Canvas.Top="-114" Height="142" Width="76" RenderTransformOrigin="1.222,0.875">
+            <HMI_Control:HMIShortPipe.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="0.871" ScaleX="1.148"/>
+                    <SkewTransform AngleY="-0.005"/>
+                    <RotateTransform Angle="-89.979"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMIShortPipe.RenderTransform>
+        </HMI_Control:HMIShortPipe>
+        <HMI_Control:HMICurve90 Canvas.Left="140" Canvas.Top="210" Height="51" Width="51" RenderTransformOrigin="0.5,0.5">
+            <HMI_Control:HMICurve90.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-0.176"/>
+                    <RotateTransform Angle="179.271"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMICurve90.RenderTransform>
+        </HMI_Control:HMICurve90>
+        <HMI_Control:HMITee1 Canvas.Left="128" Canvas.Top="61" Height="46" Width="48"/>
+        <HMI_Control:HMIShortPipe Canvas.Left="106" Canvas.Top="106" Height="105" Width="91" RenderTransformOrigin="1.222,0.875">
+            <HMI_Control:HMIShortPipe.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.12"/>
+                    <RotateTransform Angle="-0.375"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMIShortPipe.RenderTransform>
+        </HMI_Control:HMIShortPipe>
+        <HMI_Control:HMIShortPipe Canvas.Left="156" Canvas.Top="-74" Height="96" Width="76" RenderTransformOrigin="1.222,0.875">
+            <HMI_Control:HMIShortPipe.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="0.871" ScaleX="1.148"/>
+                    <SkewTransform AngleY="-0.005"/>
+                    <RotateTransform Angle="-89.979"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMIShortPipe.RenderTransform>
+        </HMI_Control:HMIShortPipe>
+        <HMI_Control:HMIShortPipe Canvas.Left="159" Canvas.Top="111" Height="84" Width="78" RenderTransformOrigin="1.222,0.875">
+            <HMI_Control:HMIShortPipe.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="0.871" ScaleX="1.148"/>
+                    <SkewTransform AngleY="-0.005"/>
+                    <RotateTransform Angle="-89.979"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMIShortPipe.RenderTransform>
+        </HMI_Control:HMIShortPipe>
+        <HMI_Control:HMIPlasticControlValve Canvas.Left="245" Canvas.Top="1" Width="76" Height="88" Open="True" TagReadText="ON:Receiving1_Valve1\"/>
+        <HMI_Control:HMIPlasticControlValve Canvas.Left="248" Canvas.Top="176" Width="76" Height="88" Open="True" TagReadText="ON:Receiving1_Valve2\"/>
+        <HMI_Control:HMIShortPipe Canvas.Left="299" Canvas.Top="-87" Height="112" Width="76" RenderTransformOrigin="1.222,0.875">
+            <HMI_Control:HMIShortPipe.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="0.871" ScaleX="1.148"/>
+                    <SkewTransform AngleY="-0.005"/>
+                    <RotateTransform Angle="-89.979"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMIShortPipe.RenderTransform>
+        </HMI_Control:HMIShortPipe>
+        <HMI_Control:HMIShortPipe Canvas.Left="291" Canvas.Top="102" Height="96" Width="76" RenderTransformOrigin="1.222,0.875">
+            <HMI_Control:HMIShortPipe.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="0.871" ScaleX="1.148"/>
+                    <SkewTransform AngleY="-0.005"/>
+                    <RotateTransform Angle="-89.979"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMIShortPipe.RenderTransform>
+        </HMI_Control:HMIShortPipe>
+        <HMI_Control:HMICurve90 Canvas.Left="394" Canvas.Top="211" Height="50" Width="42" RenderTransformOrigin="0.5,0.5">
+            <HMI_Control:HMICurve90.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="0.871" ScaleX="1.148"/>
+                    <SkewTransform AngleY="0.07"/>
+                    <RotateTransform Angle="89.711"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMICurve90.RenderTransform>
+        </HMI_Control:HMICurve90>
+        <HMI_Control:HMITee1 Canvas.Left="403" Canvas.Top="61" Height="47" Width="44"/>
+        <my:LinkLine OriginInfo="{Binding TopPin, ElementName=''}" TargetInfo="{Binding BottomPin, ElementName=''}"/>
+        <HMI_Control:HMIShortPipe Canvas.Left="386" Canvas.Top="106" Height="108" Width="79" RenderTransformOrigin="1.222,0.875">
+            <HMI_Control:HMIShortPipe.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.214"/>
+                    <RotateTransform Angle="-0.671"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMIShortPipe.RenderTransform>
+        </HMI_Control:HMIShortPipe>
+        <HMI_Control:HMITee1 Canvas.Left="617" Canvas.Top="61" Height="46" Width="44" RenderTransformOrigin="2.727,0.522"/>
+        <HMI_Control:HMIShortPipe Canvas.Left="504" Canvas.Top="-162" Height="197" Width="76" RenderTransformOrigin="1.222,0.875">
+            <HMI_Control:HMIShortPipe.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="0.871" ScaleX="1.148"/>
+                    <SkewTransform AngleY="-0.005"/>
+                    <RotateTransform Angle="-89.979"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMIShortPipe.RenderTransform>
+        </HMI_Control:HMIShortPipe>
+        <HMI_Control:HMITee1 Canvas.Left="994" Canvas.Top="61" Height="46" Width="44" RenderTransformOrigin="2.727,0.522"/>
+        <HMI_Control:HMIShortPipe Canvas.Left="861" Canvas.Top="-325" Height="383" Width="76" RenderTransformOrigin="1.222,0.875">
+            <HMI_Control:HMIShortPipe.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="0.871" ScaleX="1.148"/>
+                    <SkewTransform AngleY="-0.005"/>
+                    <RotateTransform Angle="-89.979"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMIShortPipe.RenderTransform>
+        </HMI_Control:HMIShortPipe>
+        <HMI_Control:HMIShortPipe Canvas.Left="1238" Canvas.Top="-325" Height="383" Width="76" RenderTransformOrigin="1.222,0.875">
+            <HMI_Control:HMIShortPipe.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="0.871" ScaleX="1.148"/>
+                    <SkewTransform AngleY="-0.005"/>
+                    <RotateTransform Angle="-89.979"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMIShortPipe.RenderTransform>
+        </HMI_Control:HMIShortPipe>
+        <HMI_Control:HMICurve90 Canvas.Left="1360" Canvas.Top="57" Height="55" Width="42" RenderTransformOrigin="0.5,0.5">
+            <HMI_Control:HMICurve90.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="0.871" ScaleX="1.148"/>
+                    <SkewTransform AngleY="0.07"/>
+                    <RotateTransform Angle="359.548"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMICurve90.RenderTransform>
+        </HMI_Control:HMICurve90>
+        <HMI_Control:HMIPlasticControlValve Canvas.Left="629" Canvas.Top="86" Width="76" Height="88" RenderTransformOrigin="0.5,0.5" Open="True" TagReadText="ON:Receiving1_Valve3\">
+            <HMI_Control:HMIPlasticControlValve.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="89.819"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMIPlasticControlValve.RenderTransform>
+        </HMI_Control:HMIPlasticControlValve>
+        <HMI_Control:HMIShortPipe Canvas.Left="597" Canvas.Top="153" Height="33" Width="85" RenderTransformOrigin="1.222,0.875">
+            <HMI_Control:HMIShortPipe.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.214"/>
+                    <RotateTransform Angle="-0.671"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMIShortPipe.RenderTransform>
+        </HMI_Control:HMIShortPipe>
+        <HMI_Control:HMIPlasticControlValve Canvas.Left="1006" Canvas.Top="86" Width="76" Height="88" RenderTransformOrigin="0.5,0.5" TagReadText="ON:Receiving1_Valve4\">
+            <HMI_Control:HMIPlasticControlValve.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="89.819"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMIPlasticControlValve.RenderTransform>
+        </HMI_Control:HMIPlasticControlValve>
+        <HMI_Control:HMIShortPipe Canvas.Left="974" Canvas.Top="153" Height="33" Width="85" RenderTransformOrigin="1.222,0.875">
+            <HMI_Control:HMIShortPipe.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.214"/>
+                    <RotateTransform Angle="-0.671"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMIShortPipe.RenderTransform>
+        </HMI_Control:HMIShortPipe>
+        <HMI_Control:HMIPlasticControlValve Canvas.Left="1383" Canvas.Top="88" Width="76" Height="88" RenderTransformOrigin="0.5,0.5" Open="True" TagReadText="ON:Receiving1_Valve5\">
+            <HMI_Control:HMIPlasticControlValve.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="89.819"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMIPlasticControlValve.RenderTransform>
+        </HMI_Control:HMIPlasticControlValve>
+        <HMI_Control:HMIShortPipe Canvas.Left="1351" Canvas.Top="155" Height="33" Width="85" RenderTransformOrigin="1.222,0.875">
+            <HMI_Control:HMIShortPipe.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.214"/>
+                    <RotateTransform Angle="-0.671"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMIShortPipe.RenderTransform>
+        </HMI_Control:HMIShortPipe>
+        <HMI_Control:HMIShortPipe Canvas.Left="600" Canvas.Top="424" Height="33" Width="85" RenderTransformOrigin="1.222,0.875">
+            <HMI_Control:HMIShortPipe.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.214"/>
+                    <RotateTransform Angle="-0.671"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMIShortPipe.RenderTransform>
+        </HMI_Control:HMIShortPipe>
+        <HMI_Control:HMIPlasticControlValve Canvas.Left="633" Canvas.Top="432" Width="76" Height="88" RenderTransformOrigin="0.5,0.5" Open="True" TagReadText="ON:Receiving1_Valve6\">
+            <HMI_Control:HMIPlasticControlValve.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="89.819"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMIPlasticControlValve.RenderTransform>
+        </HMI_Control:HMIPlasticControlValve>
+        <HMI_Control:HMIShortPipe Canvas.Left="977" Canvas.Top="425" Height="39" Width="85" RenderTransformOrigin="1.222,0.875">
+            <HMI_Control:HMIShortPipe.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.214"/>
+                    <RotateTransform Angle="-0.671"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMIShortPipe.RenderTransform>
+        </HMI_Control:HMIShortPipe>
+        <HMI_Control:HMIPlasticControlValve Canvas.Left="1010" Canvas.Top="441" Width="76" Height="88" RenderTransformOrigin="0.5,0.5" Open="True" TagReadText="ON:Receiving1_Valve7\">
+            <HMI_Control:HMIPlasticControlValve.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="89.819"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMIPlasticControlValve.RenderTransform>
+        </HMI_Control:HMIPlasticControlValve>
+        <HMI_Control:HMIShortPipe Canvas.Left="1352" Canvas.Top="426" Height="33" Width="85" RenderTransformOrigin="1.222,0.875">
+            <HMI_Control:HMIShortPipe.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.214"/>
+                    <RotateTransform Angle="-0.671"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMIShortPipe.RenderTransform>
+        </HMI_Control:HMIShortPipe>
+        <HMI_Control:HMIPlasticControlValve Canvas.Left="1385" Canvas.Top="434" Width="76" Height="88" RenderTransformOrigin="0.5,0.5" Open="True" TagReadText="ON:Receiving1_Valve8\">
+            <HMI_Control:HMIPlasticControlValve.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="89.819"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMIPlasticControlValve.RenderTransform>
+        </HMI_Control:HMIPlasticControlValve>
+        <HMI_Control:HMIShortPipe Canvas.Left="868" Canvas.Top="150" Height="372" Width="76" RenderTransformOrigin="1.222,0.875">
+            <HMI_Control:HMIShortPipe.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="0.871" ScaleX="1.148"/>
+                    <SkewTransform AngleY="-0.005"/>
+                    <RotateTransform Angle="-89.979"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMIShortPipe.RenderTransform>
+        </HMI_Control:HMIShortPipe>
+        <HMI_Control:HMIShortPipe Canvas.Left="1230" Canvas.Top="154" Height="366" Width="76" RenderTransformOrigin="1.222,0.875">
+            <HMI_Control:HMIShortPipe.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="0.871" ScaleX="1.148"/>
+                    <SkewTransform AngleY="-0.005"/>
+                    <RotateTransform Angle="-89.979"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMIShortPipe.RenderTransform>
+        </HMI_Control:HMIShortPipe>
+        <HMI_Control:HMICurve90 Canvas.Left="1363" Canvas.Top="498" Height="54" Width="40" RenderTransformOrigin="0.5,0.5">
+            <HMI_Control:HMICurve90.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="0.871" ScaleX="1.148"/>
+                    <SkewTransform AngleY="0.07"/>
+                    <RotateTransform Angle="450.242"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMICurve90.RenderTransform>
+        </HMI_Control:HMICurve90>
+        <HMI_Control:HMICurve90 Canvas.Left="635" Canvas.Top="496" Height="58" Width="42" RenderTransformOrigin="0.5,0.5">
+            <HMI_Control:HMICurve90.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="0.871" ScaleX="1.148"/>
+                    <SkewTransform AngleY="0.07"/>
+                    <RotateTransform Angle="539.513"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMICurve90.RenderTransform>
+        </HMI_Control:HMICurve90>
+        <HMI_Control:HMIShortPipe Canvas.Left="978" Canvas.Top="562" Height="75" Width="85" RenderTransformOrigin="1.222,0.875">
+            <HMI_Control:HMIShortPipe.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.214"/>
+                    <RotateTransform Angle="-0.671"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMIShortPipe.RenderTransform>
+        </HMI_Control:HMIShortPipe>
+        <HMI_Control:HMIIntersection1 Canvas.Left="995" Canvas.Top="509" Height="56" Width="51"/>
+        <HMI_Control:HMICoolPump1 Canvas.Left="1224" Canvas.Top="928" Height="144" Width="182" TagReadText="ON:Receiving1_Motor_Run\" Cursor="No" Open="True"/>
+        <HMI_Control:HMIPlasticControlValve Canvas.Left="1178" Canvas.Top="928" Width="76" Height="88" Open="True" TagReadText="ON:Receiving1_Valve9\"/>
+        <HMI_Control:HMICurve90 Canvas.Left="1014" Canvas.Top="958" Height="58" Width="42" RenderTransformOrigin="-5.366,-2.193">
+            <HMI_Control:HMICurve90.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="0.871" ScaleX="1.148"/>
+                    <SkewTransform AngleY="0.07"/>
+                    <RotateTransform Angle="539.513"/>
+                    <TranslateTransform X="530.356" Y="290.174"/>
+                </TransformGroup>
+            </HMI_Control:HMICurve90.RenderTransform>
+        </HMI_Control:HMICurve90>
+        <HMI_Control:HMIShortPipe Canvas.Left="1083" Canvas.Top="804" Height="153" Width="76" RenderTransformOrigin="1.222,0.875">
+            <HMI_Control:HMIShortPipe.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="0.871" ScaleX="1.148"/>
+                    <SkewTransform AngleY="-0.005"/>
+                    <RotateTransform Angle="-89.979"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMIShortPipe.RenderTransform>
+        </HMI_Control:HMIShortPipe>
+        <HMI_Control:HMIPlasticControlValve Canvas.Left="1273" Canvas.Top="590" Width="76" Height="88" Open="True" TagReadText="ON:Receiving1_Valve10\"/>
+        <HMI_Control:HMIShortPipe Canvas.Left="1456" Canvas.Top="665" Height="261" Width="77" RenderTransformOrigin="1.222,0.875">
+            <HMI_Control:HMIShortPipe.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="0.871" ScaleX="1.148"/>
+                    <SkewTransform AngleY="-0.005"/>
+                    <RotateTransform Angle="-0.316"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMIShortPipe.RenderTransform>
+        </HMI_Control:HMIShortPipe>
+        <HMI_Control:HMIShortPipe Canvas.Left="1350" Canvas.Top="845" Height="54" Width="77" RenderTransformOrigin="1.222,0.875">
+            <HMI_Control:HMIShortPipe.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="0.871" ScaleX="1.148"/>
+                    <SkewTransform AngleY="-0.005"/>
+                    <RotateTransform Angle="-89.979"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMIShortPipe.RenderTransform>
+        </HMI_Control:HMIShortPipe>
+        <HMI_Control:HMICurve90 Canvas.Left="1325" Canvas.Top="479" Height="60" Width="45" RenderTransformOrigin="-5.366,-2.193">
+            <HMI_Control:HMICurve90.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="0.871" ScaleX="1.148"/>
+                    <SkewTransform AngleY="0.07"/>
+                    <RotateTransform Angle="449.723"/>
+                    <TranslateTransform X="530.356" Y="290.174"/>
+                </TransformGroup>
+            </HMI_Control:HMICurve90.RenderTransform>
+        </HMI_Control:HMICurve90>
+        <HMI_Control:HMICurve90 Canvas.Left="1664" Canvas.Top="645" Height="56" Width="42" RenderTransformOrigin="0.5,0.5">
+            <HMI_Control:HMICurve90.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="0.871" ScaleX="1.148"/>
+                    <SkewTransform AngleY="0.07"/>
+                    <RotateTransform Angle="359.548"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMICurve90.RenderTransform>
+        </HMI_Control:HMICurve90>
+        <HMI_Control:HMIShortPipe Canvas.Left="1356" Canvas.Top="467" Height="150" Width="77" RenderTransformOrigin="1.222,0.875">
+            <HMI_Control:HMIShortPipe.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="0.871" ScaleX="1.148"/>
+                    <SkewTransform AngleY="-0.005"/>
+                    <RotateTransform Angle="-89.979"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMIShortPipe.RenderTransform>
+        </HMI_Control:HMIShortPipe>
+        <HMI_Control:HMIShortPipe Canvas.Left="1178" Canvas.Top="477" Height="140" Width="77" RenderTransformOrigin="1.222,0.875">
+            <HMI_Control:HMIShortPipe.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="0.871" ScaleX="1.148"/>
+                    <SkewTransform AngleY="-0.005"/>
+                    <RotateTransform Angle="-89.979"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMIShortPipe.RenderTransform>
+        </HMI_Control:HMIShortPipe>
+        <HMI_Control:HMILevelSensor Canvas.Left="685" Canvas.Top="176" Height="75" Width="107" TagReadText="ON:Receiving1_Sensor1\"/>
+        <HMI_Control:HMILevelSensor Canvas.Left="685" Canvas.Top="373" Height="75" Width="107" TagReadText="ON:Receiving1_Sensor2\"/>
+        <HMI_Control:HMILevelSensor Canvas.Left="1062" Canvas.Top="176" Height="75" Width="107" TagReadText="ON:Receiving1_Sensor3\"/>
+        <HMI_Control:HMILevelSensor Canvas.Left="1062" Canvas.Top="373" Height="75" Width="107" TagReadText="ON:Receiving1_Sensor4\"/>
+        <HMI_Control:HMILevelSensor Canvas.Left="1439" Canvas.Top="176" Height="75" Width="107" TagReadText="ON:Receiving1_Sensor5\"/>
+        <HMI_Control:HMILevelSensor Canvas.Left="1439" Canvas.Top="373" Height="75" Width="107" TagReadText="ON:Receiving1_Sensor6\"/>
+        <HMI_Control:HMILevelSensor Canvas.Left="828" Canvas.Top="645" RenderTransformOrigin="0.5,0.5" Height="94" Width="109" TagReadText="ON:Receiving1_Sensor7\">
+            <HMI_Control:HMILevelSensor.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="179.357"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMILevelSensor.RenderTransform>
+        </HMI_Control:HMILevelSensor>
+        <HMI_Control:HMILevelSensor Canvas.Left="829" Canvas.Top="815" RenderTransformOrigin="0.5,0.5" Height="94" Width="109" TagReadText="ON:Receiving1_Sensor8\">
+            <HMI_Control:HMILevelSensor.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="179.357"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMILevelSensor.RenderTransform>
+        </HMI_Control:HMILevelSensor>
+        <HMI_Control:HMIReinforcedTankWithMixter Canvas.Left="423" Canvas.Top="126" Height="301" Width="377" Open="True" TagReadText="ON:Receiving1_Mix1_Run\"/>
+        <HMI_Control:HMIReinforcedTankWithMixter Canvas.Left="800" Canvas.Top="126" Height="301" Width="378" Open="True" TagReadText="ON:Receiving1_Mix2_Run\"/>
+        <HMI_Control:HMIReinforcedTankWithMixter Canvas.Left="1182" Canvas.Top="126" Height="301" Width="368" Open="True" TagReadText="ON:Receiving1_Mix3_Run\"/>
+        <HMI_Control:HMITank36 Canvas.Left="746" Canvas.Top="615" Height="368" Width="564"/>
+        <HMI_Control:HMI_TextValue x:Name="tank4" Canvas.Left="985" Canvas.Top="617" Height="31" Width="77" Value="18.12" TagReadText="PV:Receiving1_Mix4_Level\"/>
+        <HMI_Control:HMI_TextValue x:Name="tank1"  Canvas.Left="597" Canvas.Top="194" Height="34" Width="92" TagReadText="PV:Receiving1_Mix1_Level\" Value="23"/>
+        <HMI_Control:HMI_TextValue x:Name="tank2" Canvas.Left="976" Canvas.Top="194" Height="34" Width="92" TagReadText="PV:Receiving1_Mix2_Level\"/>
+        <HMI_Control:HMI_TextValue x:Name="tank3"  Canvas.Left="1351" Canvas.Top="194" Height="34" Width="92" TagReadText="PV:Receiving1_Mix3_Level\"/>
+        <HMI_Control:HMIPlasticControlValve Canvas.Left="1600" Canvas.Top="589" Width="76" Height="88" Open="True" TagReadText="ON:Receiving1_Valve11\"/>
+        <HMI_Control:HMITee1 Canvas.Left="1464" Canvas.Top="648" Height="51" Width="44" RenderTransformOrigin="2.727,0.522"/>
+        <HMI_Control:HMIShortPipe Canvas.Left="1507" Canvas.Top="488" Height="125" Width="77" RenderTransformOrigin="1.222,0.875">
+            <HMI_Control:HMIShortPipe.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="0.871" ScaleX="1.148"/>
+                    <SkewTransform AngleY="-0.005"/>
+                    <RotateTransform Angle="-89.979"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMIShortPipe.RenderTransform>
+        </HMI_Control:HMIShortPipe>
+        <HMI_Control:HMIWaterDrop Canvas.Left="1672" Canvas.Top="743" RenderTransformOrigin="0.141,0.312" Height="45" Width="54"/>
+        <HMI_Control:HMIWaterDrop Canvas.Left="1692" Canvas.Top="760" RenderTransformOrigin="0.141,0.312" Height="30" Width="40"/>
+        <HMI_Control:HMIWaterDrop Canvas.Left="1672" Canvas.Top="773" RenderTransformOrigin="0.141,0.312" Height="30" Width="40"/>
+        <HMI_Control:HMIWaterDrop Canvas.Left="1686" Canvas.Top="778" RenderTransformOrigin="0.141,0.312" Height="30" Width="40"/>
+        <HMI_Control:HMIWaterDrop Canvas.Left="1668" Canvas.Top="752" RenderTransformOrigin="0.141,0.312" Height="30" Width="40"/>
+        <HMI_Control:HMIWaterDrop Canvas.Left="1678" Canvas.Top="793" RenderTransformOrigin="0.141,0.312" Height="30" Width="40"/>
+        <HMI_Control:HMIWaterDrop Canvas.Left="1686" Canvas.Top="805" RenderTransformOrigin="0.141,0.312" Height="30" Width="29"/>
+        <Label x:Name="label" Content="V1" Canvas.Left="231" Canvas.Top="24" Height="50" Width="59" VerticalAlignment="Center" FontSize="20"/>
+        <Label x:Name="label_Copy" Content="V2" Canvas.Left="235" Canvas.Top="200" Height="50" Width="59" VerticalAlignment="Center" FontSize="20"/>
+        <Label x:Name="label_Copy1" Content="V3" Canvas.Left="655" Canvas.Top="141" Height="50" Width="59" VerticalAlignment="Center" FontSize="20"/>
+        <Label x:Name="label_Copy2" Content="V4" Canvas.Left="1038" Canvas.Top="144" Height="50" Width="59" VerticalAlignment="Center" FontSize="20" RenderTransformOrigin="1.339,5.82"/>
+        <Label x:Name="label_Copy3" Content="V5" Canvas.Left="1409" Canvas.Top="145" Height="50" Width="59" VerticalAlignment="Center" FontSize="20" RenderTransformOrigin="-0.271,6.32"/>
+        <Label x:Name="label_Copy4" Content="V6" Canvas.Left="591" Canvas.Top="460" Height="50" Width="59" VerticalAlignment="Center" FontSize="20"/>
+        <Label x:Name="label_Copy5" Content="V7" Canvas.Left="968" Canvas.Top="462" Height="50" Width="59" VerticalAlignment="Center" FontSize="20"/>
+        <Label x:Name="label_Copy6" Content="V8" Canvas.Left="1345" Canvas.Top="455" Height="50" Width="59" VerticalAlignment="Center" FontSize="20"/>
+        <Label x:Name="label_Copy7" Content="M1" Canvas.Left="624" Canvas.Top="390" Height="50" Width="59" VerticalAlignment="Center" FontSize="20"/>
+        <Label x:Name="label_Copy8" Content="M2" Canvas.Left="1003" Canvas.Top="390" Height="50" Width="59" VerticalAlignment="Center" FontSize="20"/>
+        <Label x:Name="label_Copy9" Content="M3" Canvas.Left="1376" Canvas.Top="390" Height="50" Width="59" VerticalAlignment="Center" FontSize="20"/>
+        <Label x:Name="label_Copy10" Content="M4" Canvas.Left="997" Canvas.Top="869" Height="50" Width="59" FontSize="24"/>
+        <Label x:Name="label_Copy11" Content="V9" Canvas.Left="1195" Canvas.Top="1010" Height="50" Width="59" VerticalAlignment="Center" FontSize="20"/>
+        <Label x:Name="label_Copy12" Content="V10" Canvas.Left="1292" Canvas.Top="673" Height="50" Width="59" VerticalAlignment="Center" FontSize="20"/>
+        <Label x:Name="label_Copy13" Content="V11" Canvas.Left="1617" Canvas.Top="690" Height="50" Width="59" VerticalAlignment="Center" FontSize="20"/>
+        <my:LinkLine OriginInfo="{Binding RightPin, ElementName=''}" TargetInfo="{Binding BottomPin, ElementName=''}"/>
+        <my:LinkLine OriginInfo="{Binding RightPin, ElementName=''}" TargetInfo="{Binding BottomPin, ElementName=''}"/>
+        <my:LinkLine OriginInfo="{Binding RightPin, ElementName=''}" TargetInfo="{Binding BottomPin, ElementName=''}"/>
+        <HMI_Control:Gate Canvas.Left="1676" Canvas.Top="687" Height="68" Width="45" TagReadText="ON:Receiving1_Valve11\"/>
+        <HMI_Control:ChainConveyor Canvas.Left="1650" Canvas.Top="850" Width="235" Height="80" TagReadText="RUN:Receiving1_Valve11\" Working="True"/>
+        <HMI_Control:ProcessLevel Value="{Binding ElementName=tank1, Path=Value}" Canvas.Left="582" Canvas.Top="238" Height="149" Width="124" Maximum="30" Background="Black"/>
+        <HMI_Control:ProcessLevel Value="{Binding Value, ElementName=tank2  }" Canvas.Left="960" Canvas.Top="237" Height="150" Width="124" Maximum="30"/>
+        <HMI_Control:ProcessLevel Value="{Binding Value, ElementName=tank3 }" Canvas.Left="1335" Canvas.Top="238" Height="147" Width="124" Maximum="30"/>
+        <HMI_Control:ProcessLevel Value="{Binding Value, ElementName=tank4 }" Canvas.Left="940" Canvas.Top="662" Height="207" Width="164" Maximum="90"/>
+
+        <HMI_Control:HMIShortPipe Canvas.Left="980" Canvas.Top="903" Height="75" Width="85" RenderTransformOrigin="1.222,0.875">
+            <HMI_Control:HMIShortPipe.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.214"/>
+                    <RotateTransform Angle="-0.671"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </HMI_Control:HMIShortPipe.RenderTransform>
+        </HMI_Control:HMIShortPipe>
+        <my:HVScale Canvas.Left="582" Canvas.Top="238" Height="148" Name="hVScale1" Width="25"
+                    Orientation="Vertical" Minimum="0" Maximum="30" Foreground="White" />
+        <my:HVScale Canvas.Left="959" Canvas.Top="238" Height="149" x:Name="hVScale1_Copy" Width="25"
+            Orientation="Vertical" Minimum="0" Maximum="30" Foreground="White" />
+        <my:HVScale Canvas.Left="1335" Canvas.Top="237" Height="149" x:Name="hVScale1_Copy1" Width="25"
+            Orientation="Vertical" Minimum="0" Maximum="30" Foreground="White" />
+        <my:HVScale Canvas.Left="940" Canvas.Top="662" Height="206" x:Name="hVScale1_Copy2" Width="28"
+            Orientation="Vertical" Minimum="0" Maximum="90" Foreground="White" />
+
+    </Canvas>
+
+
+</UserControl>
