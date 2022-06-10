@@ -259,7 +259,7 @@
 
         </Grid>
 
-        <Grid  Canvas.Left="820" Canvas.Bottom="0" x:Name="cvs3"  Width="199" HorizontalAlignment="Left" VerticalAlignment="Bottom" Opacity="100" Canvas.Top="750" Height="500" Visibility="Hidden" Margin="1,0,0,0">
+        <Grid  Canvas.Left="820" Canvas.Bottom="0" x:Name="cvs3"  Width="199" HorizontalAlignment="Left" VerticalAlignment="Bottom" Opacity="100" Canvas.Top="750" Height="500" Visibility="Visible" Margin="1,0,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="55*"/>
                 <RowDefinition Height="391*"/>
@@ -341,11 +341,14 @@
 
                 <StackPanel Grid.Column="1" HorizontalAlignment="Center" Orientation="Horizontal" Height="91" Width="156">
 
-                    <Image Source="ImageResources/150837039_135440608429122_5073399784826419136_n.jpg" Width="51" Height="50" Stretch="Fill">
-                        <Image.Clip>
-                            <EllipseGeometry RadiusX="25" RadiusY="25" Center="25,25"/>
-                        </Image.Clip>
-                    </Image>
+                    <HMI_Control:BreathLamp Width="60" Height="60" LampEffect="OuterGlow" Background="Transparent" IsLampStart="true"
+                                   VerticalAlignment="Top" HorizontalAlignment="Left">
+                        <Ellipse>
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="pack://application:,,,/WpfAppServer;component/ImageResources/150837039_135440608429122_5073399784826419136_n.jpg"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                    </HMI_Control:BreathLamp>
 
                     <StackPanel VerticalAlignment="Center" Margin="5 0 0 0">
                         <TextBlock Text="Duy Le" FontSize="20" FontWeight="Bold" Width="72"/>
@@ -507,7 +510,7 @@
                         <TranslateTransform/>
                     </TransformGroup>
                 </my:HMIButton.RenderTransform>
-                <StackPanel>
+                
                     <Image x:Name="image" Source="ImageResources/microsoft.png" Width="36" Height="34" RenderTransformOrigin="0.5,0.5" >
                         <Image.RenderTransform>
                             <TransformGroup>
@@ -519,7 +522,7 @@
                         </Image.RenderTransform>
                     </Image>
 
-                </StackPanel>
+               
             </my:HMIButton>
             <TextBlock x:Name="textBlock" Text="Start" RenderTransformOrigin="0.5,0.5" Width="24.4" Canvas.Top="-20.045" Canvas.Left="9.99" Visibility="Hidden">
                 <TextBlock.Background>
